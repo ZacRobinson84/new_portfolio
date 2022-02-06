@@ -1,0 +1,105 @@
+html {
+  font-family: "Fredoka One", cursive;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.large-screen-navbar {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: rgb(255, 164, 225);
+  width: 100%;
+  height: 75px;
+  margin: 0;
+  border: 4px rgb(91, 138, 91);
+  border-style: none none solid none;
+}
+
+.large-screen-navbar ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 2 / 3;
+  list-style-type: none;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.large-screen-navbar a {
+  text-decoration: none;
+  color: white;
+  align-self: end;
+  justify-self: center;
+}
+
+.large-screen-navbar li {
+  display: inline;
+}
+
+@media screen and (max-width: 1115px) {
+  .large-screen-navbar ul {
+    display: none;
+  }
+}
+
+.intro-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: 80%;
+  height: 800px;
+  margin: auto;
+  border-top-left-radius: 15px 250px;
+  border-top-right-radius: 250px 15px;
+  background-color: rgb(131, 228, 131);
+  overflow: hidden;
+}
+
+.intro-container h1 {
+  font-size: 6rem;
+  color: white;
+  margin: 0;
+  margin-left: 40px;
+  align-self: center;
+}
+
+@keyframes slideBox {
+  0% {
+    transform: translate(0);
+    height: 150px;
+  }
+  90% {
+    transform: translate(1000px);
+    height: 150px;
+  }
+  100% {
+    transform: translate(1000px);
+
+    height: 500px;
+  }
+}
+
+.cover-box {
+  position: absolute;
+  grid-column: 1 / 2;
+  background-color: rgb(131, 228, 131);
+  margin-left: 30px;
+  width: 1500px;
+  height: 150px;
+  top: 130px;
+  border: 15px rgb(91, 138, 91);
+  border-style: none none none solid;
+
+  z-index: 3;
+  animation: slideBox 2s ease-in-out 800ms forwards;
+}
