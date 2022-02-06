@@ -13,6 +13,8 @@ header {
   z-index: 5;
 }
 
+/* Navbar for large screens */
+
 .large-screen-navbar {
   position: sticky;
   display: grid;
@@ -21,7 +23,7 @@ header {
   width: 100%;
   height: 75px;
   margin: 0;
-  border: 4px rgb(91, 138, 91);
+  border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
 }
 
@@ -43,6 +45,10 @@ header {
 
 .large-screen-navbar li {
   display: inline;
+  padding: 10px 20px 0 20px;
+  background-color: rgb(190, 123, 168);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 @media screen and (max-width: 1115px) {
@@ -51,6 +57,8 @@ header {
   }
 }
 
+/* Introduction Section */
+
 .intro-container {
   position: relative;
   display: grid;
@@ -58,9 +66,10 @@ header {
   grid-template-rows: 1fr 1fr;
   width: 80%;
   height: 800px;
-  margin: auto;
+  margin: 75px auto;
   border-top-left-radius: 15px 250px;
   border-top-right-radius: 250px 15px;
+  border-bottom-left-radius: 200px 25px;
   background-color: rgb(131, 228, 131);
   overflow: hidden;
 }
@@ -73,33 +82,43 @@ header {
   align-self: center;
 }
 
-@keyframes slideBox {
-  0% {
-    transform: translate(0);
-    height: 150px;
-  }
-  90% {
-    transform: translate(1000px);
-    height: 150px;
-  }
-  100% {
-    transform: translate(1000px);
-
-    height: 500px;
-  }
-}
-
 .cover-box {
   position: absolute;
   grid-column: 1 / 2;
   background-color: rgb(131, 228, 131);
   margin-left: 30px;
   width: 1500px;
-  height: 150px;
-  top: 130px;
-  border: 15px rgb(91, 138, 91);
+  height: 120px;
+  top: 140px;
+  border: 15px;
   border-style: none none none solid;
-
+  border-color: rgb(131, 228, 131);
   z-index: 3;
-  animation: slideBox 2s ease-in-out 800ms forwards;
+  animation: slideBox 3s ease-in-out 800ms forwards;
+}
+
+/* Keyframes */
+
+@keyframes slideBox {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    border-color: rgb(91, 138, 91);
+    transform: translate(0);
+  }
+  30% {
+    transform: translate(130px);
+  }
+  50% {
+    transform: translate(130px);
+  }
+  90% {
+    transform: translate(1000px);
+    border-color: rgb(91, 138, 91);
+  }
+  100% {
+    transform: translate(1000px);
+    border-color: rgb(131, 228, 131);
+  }
 }
