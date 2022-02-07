@@ -20,35 +20,40 @@ header {
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: rgb(255, 164, 225);
-  width: 100%;
+  width: 0;
   height: 75px;
   margin: 0;
   border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
+  animation: navSlide 1s ease 4s forwards;
 }
 
 .large-screen-navbar ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
   grid-column: 2 / 3;
+  align-self: end;
+  justify-self: start;
   list-style-type: none;
   font-size: 1.5rem;
   margin: 0;
+  padding: 20px 20px 0 20px;
+  opacity: 0;
+  animation: navFadeIn 500ms ease 5000ms forwards;
 }
 
 .large-screen-navbar a {
   text-decoration: none;
   color: white;
   align-self: end;
-  justify-self: center;
 }
 
 .large-screen-navbar li {
   display: inline;
   padding: 10px 20px 0 20px;
+  margin: 0 10px;
   background-color: rgb(190, 123, 168);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  pointer-events: auto;
 }
 
 @media screen and (max-width: 1115px) {
@@ -94,7 +99,8 @@ header {
   border-style: none none none solid;
   border-color: rgb(131, 228, 131);
   z-index: 3;
-  animation: slideBox 3s ease-in-out 800ms forwards;
+  animation: slideBox 3s ease-in-out 1s forwards,
+    flashOpacity 600ms ease-in-out 8 forwards;
 }
 
 /* Keyframes */
@@ -104,7 +110,6 @@ header {
     transform: translate(0);
   }
   10% {
-    border-color: rgb(91, 138, 91);
     transform: translate(0);
   }
   30% {
@@ -114,11 +119,37 @@ header {
     transform: translate(130px);
   }
   90% {
-    transform: translate(1000px);
+    transform: translate(950px);
+  }
+  100% {
+    transform: translate(950px);
+    border-color: rgb(131, 228, 131);
+  }
+}
+
+@keyframes navSlide {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes navFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes flashOpacity {
+  0% {
     border-color: rgb(91, 138, 91);
   }
   100% {
-    transform: translate(1000px);
     border-color: rgb(131, 228, 131);
   }
 }
