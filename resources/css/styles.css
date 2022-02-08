@@ -13,6 +13,15 @@ header {
   z-index: 5;
 }
 
+.banana {
+  position: absolute;
+
+  height: 500px;
+  background-color: yellow;
+  animation: slideBox 1s ease forwards;
+  z-index: -1;
+}
+
 /* Navbar for large screens */
 
 .large-screen-navbar {
@@ -65,6 +74,7 @@ header {
 /* Introduction Section */
 
 .intro-container {
+  display: none;
   position: relative;
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -103,8 +113,8 @@ header {
   border-style: none none none solid;
   border-color: rgb(131, 228, 131);
   z-index: 3;
-  animation: slideBox 3s ease-in-out 1s forwards,
-    flashOpacity 600ms ease-in-out 8 forwards;
+  /*animation: slideBox 3s ease-in-out 1s forwards,
+    flashOpacity 600ms ease-in-out 8 forwards;*/
 }
 
 .cover-box#box-2 {
@@ -119,6 +129,7 @@ header {
 
 @media screen and (max-width: 450px) {
   .intro-container {
+    display: none;
     width: 90%;
     margin: 25px auto;
   }
@@ -134,24 +145,24 @@ header {
   .cover-box#box-1 {
     height: 70px;
     top: 100px;
-    animation: smallSlideBox1 600ms ease 1s forwards,
-      flashOpacity 600ms ease-in-out 3 forwards;
+    /*animation: smallSlideBox1 600ms ease 1s forwards,
+      flashOpacity 600ms ease-in-out 3 forwards;*/
   }
 
   .cover-box#box-2 {
     display: inline;
     height: 70px;
     top: 170px;
-    animation: smallSlideBox2 1300ms ease 2300ms forwards,
-      flashOpacity 600ms ease-in-out 1800ms 2 forwards;
+    /*animation: smallSlideBox2 1300ms ease 2300ms forwards,
+      flashOpacity 600ms ease-in-out 1800ms 2 forwards;*/
   }
 
   .cover-box#box-3 {
     display: inline;
     height: 70px;
     top: 235px;
-    animation: smallSlideBox3 1200ms ease 3200ms forwards,
-      flashOpacity 600ms ease-in-out 3s 3 forwards;
+    /*animation: smallSlideBox3 1200ms ease 3200ms forwards,
+      flashOpacity 600ms ease-in-out 3s 3 forwards;*/
   }
 
   .large-screen-navbar {
