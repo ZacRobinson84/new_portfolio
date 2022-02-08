@@ -1,5 +1,3 @@
-document.body.onload = addElement;
-
 function getRandNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
