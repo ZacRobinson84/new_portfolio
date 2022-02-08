@@ -1,17 +1,29 @@
 document.body.onload = addElement;
 
-function addElement() {
-  for (let i = 0; i < 30; i++) {
-    let randNumY = Math.floor(Math.random() * 3000);
-    let randDelay = Math.floor(Math.random() * 3000);
-    let randDuration = Math.floor(Math.random() * 1000);
-    const newDiv = document.createElement("div");
-    newDiv.className = "banana";
+function getRandNum(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
-    newDiv.style.top = randNumY.toString().concat("px");
-    newDiv.style.animationDuration = randDuration.toString().concat("ms");
-    newDiv.style.animationDelay = randDelay.toString().concat("ms");
+function createDivs(divName, rotateRoll) {
+  for (let i = 0; i < 15; i++) {
+    setTimeout(() => {
+      let randNumY = getRandNum(0, 2000);
+      let randDelay = getRandNum(0, 1500);
+      let randDuration = getRandNum(500, 1000);
+      let randRotate = getRandNum(0, rotateRoll);
+      const newDiv = document.createElement("div");
+      newDiv.className = divName;
 
-    document.body.appendChild(newDiv);
+      newDiv.style.top = randNumY.toString().concat("px");
+      newDiv.style.animationDuration = randDuration.toString().concat("ms");
+      newDiv.style.animationDelay = randDelay.toString().concat("ms");
+      newDiv.style.transform = "rotate(" + randRotate + "deg)";
+      document.body.appendChild(newDiv);
+    }, getRandNum(0, 2000));
   }
+}
+
+function addElement() {
+  createDivs("banana", 11);
+  createDivs("orange", -11);
 }

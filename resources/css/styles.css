@@ -18,17 +18,33 @@ header {
     width: 0;
   }
   100% {
-    width: 100%;
+    width: 3000px;
   }
 }
 
 .banana {
-  right: 0;
+  left: -100px;
   position: absolute;
   width: 0;
   height: 100px;
-  background-color: yellow;
-  transform: rotate(5deg);
+  background-color: rgb(163, 104, 143);
+  border: 12px solid rgb(128, 81, 112);
+  border-style: solid none solid none;
+  opacity: 75%;
+
+  animation: paintBackground ease-in-out forwards;
+  z-index: -1;
+}
+
+.orange {
+  right: -100px;
+  position: absolute;
+  width: 0;
+  height: 100px;
+  background-color: rgb(163, 104, 143);
+  border: 12px solid rgb(128, 81, 112);
+  border-style: solid none solid none;
+  opacity: 75%;
   animation: paintBackground ease forwards;
   z-index: -1;
 }
