@@ -3,6 +3,7 @@ body {
   font-family: "Fredoka One", cursive;
   box-sizing: border-box;
   margin: 0;
+  height: 100%;
 }
 
 header {
@@ -11,19 +12,12 @@ header {
   z-index: 1;
 }
 
-main {
-  position: relative;
-  max-width: 100%;
-  overflow-x: hidden;
-  height: auto;
-}
-
 @keyframes paintBackground {
   0% {
     width: 0;
   }
   100% {
-    width: 1000px;
+    width: 3000px;
   }
 }
 
@@ -101,6 +95,13 @@ main {
 
 /* Introduction Section */
 
+.intro-animation {
+  position: relative;
+  overflow-x: hidden;
+  max-width: 100%;
+  height: 100%;
+}
+
 @keyframes growIntroWidth {
   0% {
     opacity: 0;
@@ -113,7 +114,7 @@ main {
 .intro-container {
   position: relative;
   display: grid;
-  grid-template-columns: 4fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   width: 80%;
   height: 800px;
@@ -195,7 +196,7 @@ main {
     top: 170px;
     margin-left: 25px;
     animation: smallSlideBox2 900ms ease-out 5300ms forwards,
-      flashOpacity 600ms ease-in-out 5000ms 2;
+      flashOpacity 600ms ease-in-out 5000ms 2 forwards;
   }
 
   .cover-box#box-3 {
@@ -204,7 +205,7 @@ main {
     top: 235px;
     margin-left: 25px;
     animation: smallSlideBox3 1100ms ease-out 6000ms forwards,
-      flashOpacity 600ms ease-in-out 5950ms 4;
+      flashOpacity 600ms ease-in-out 5950ms 4 forwards;
   }
 
   .navbar {
