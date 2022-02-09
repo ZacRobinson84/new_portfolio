@@ -94,6 +94,15 @@ header {
 
 /* Introduction Section */
 
+@keyframes growIntroWidth {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 90%;
+  }
+}
+
 .intro-container {
   position: relative;
   display: grid;
@@ -107,14 +116,15 @@ header {
   border-bottom-left-radius: 200px 25px;
   background-color: rgb(131, 228, 131);
   overflow: hidden;
-  opacity: 90%;
+  opacity: 0;
+  animation: growIntroWidth 1650ms ease-in-out 2000ms forwards;
 }
 
 .intro-container h1 {
   font-size: 6rem;
   color: white;
   margin: 0;
-  margin-left: 40px;
+  margin-left: 70px;
   align-self: center;
 }
 
@@ -126,7 +136,7 @@ header {
   position: absolute;
   grid-column: 1 / 2;
   background-color: rgb(131, 228, 131);
-  margin-left: 30px;
+  margin-left: 60px;
   width: 1500px;
   height: 120px;
   top: 140px;
@@ -149,24 +159,15 @@ header {
 /* Media Queries */
 
 @media screen and (max-width: 450px) {
-  @keyframes growIntro {
-    0% {
-      height: 0;
-    }
-    100% {
-      height: 800px;
-    }
-  }
-
   .intro-container {
-    width: 90%;
-    height: 0;
+    width: 80%;
+
     margin: 25px auto;
-    animation: growIntro 500ms ease-in-out 3s forwards;
   }
 
   .intro-container h1 {
     font-size: 3.5rem;
+    margin: 25px;
   }
 
   .intro-container h1 br {
@@ -176,29 +177,33 @@ header {
   .cover-box#box-1 {
     height: 70px;
     top: 100px;
-    animation: smallSlideBox1 600ms ease 1s forwards,
-      flashOpacity 600ms ease-in-out 3 forwards;
+    margin-left: 25px;
+    animation: smallSlideBox1 600ms ease-out 4s forwards,
+      flashOpacity 600ms ease-in-out 9 forwards;
   }
 
   .cover-box#box-2 {
     display: inline;
     height: 70px;
     top: 170px;
-    animation: smallSlideBox2 1300ms ease 2300ms forwards,
-      flashOpacity 600ms ease-in-out 1800ms 2 forwards;
+    margin-left: 25px;
+    animation: smallSlideBox2 1100ms ease-out 5300ms forwards,
+      flashOpacity 600ms ease-in-out 5000ms 3 forwards;
   }
 
   .cover-box#box-3 {
     display: inline;
     height: 70px;
     top: 235px;
-    animation: smallSlideBox3 1200ms ease 3200ms forwards,
-      flashOpacity 600ms ease-in-out 3s 3 forwards;
+    margin-left: 25px;
+    animation: smallSlideBox3 1200ms ease-out 6200ms forwards,
+      flashOpacity 600ms ease-in-out 6000ms 5 forwards;
   }
 
   .large-screen-navbar {
+    height: 90px;
     animation-duration: 700ms;
-    animation-delay: 4700ms;
+    animation-delay: 7s;
   }
 }
 
@@ -212,7 +217,7 @@ header {
     transform: translate(0);
   }
   100% {
-    transform: translate(100px);
+    transform: translate(80px);
     display: none;
   }
 }
@@ -225,7 +230,7 @@ header {
     transform: translate(0);
   }
   100% {
-    transform: translate(220px);
+    transform: translate(200px);
     display: none;
   }
 }
@@ -238,7 +243,7 @@ header {
     transform: translate(0);
   }
   100% {
-    transform: translate(275px);
+    transform: translate(265px);
     display: none;
   }
 }

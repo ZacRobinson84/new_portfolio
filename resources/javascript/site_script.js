@@ -15,7 +15,7 @@ function getRandRGB() {
 function createDivs(divClass, divID, rotateRoll) {
   for (let i = 0; i < 10; i++) {
     setTimeout(() => {
-      let randNumY = getRandNum(50, 1100);
+      let randNumY = getRandNum(25, 1100);
       let randDelay = getRandNum(0, 1000);
       let randDuration = getRandNum(300, 1000);
       let randRotate = getRandNum(0, rotateRoll);
