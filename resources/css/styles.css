@@ -1,12 +1,8 @@
-html {
-  font-family: "Fredoka One", cursive;
-}
-
+html,
 body {
+  font-family: "Fredoka One", cursive;
   box-sizing: border-box;
   margin: 0;
-  height: 2000px;
-  overflow-x: hidden !important;
 }
 
 header {
@@ -16,14 +12,18 @@ header {
 }
 
 main {
-  overflow-x: hidden !important;
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+  height: auto;
 }
+
 @keyframes paintBackground {
   0% {
     width: 0;
   }
   100% {
-    width: 3000px;
+    width: 1000px;
   }
 }
 
@@ -37,7 +37,6 @@ main {
   border-radius: 20px;
   animation: paintBackground ease-in-out forwards;
   z-index: -1;
-  overflow: hidden;
 }
 
 .banana#left {
@@ -101,9 +100,6 @@ main {
 }
 
 /* Introduction Section */
-
-.intro-animation-container {
-}
 
 @keyframes growIntroWidth {
   0% {
