@@ -46,7 +46,7 @@ header {
 
 /* Navbar for large screens */
 
-.large-screen-navbar {
+.navbar {
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: rgb(255, 164, 225);
@@ -58,7 +58,7 @@ header {
   animation: navSlide 1s ease 7s forwards;
 }
 
-.large-screen-navbar ul {
+.navbar ul {
   grid-column: 2 / 3;
   align-self: end;
   justify-self: start;
@@ -70,13 +70,13 @@ header {
   animation: navFadeIn 500ms ease 8s forwards;
 }
 
-.large-screen-navbar a {
+.navbar a {
   text-decoration: none;
   color: white;
   align-self: end;
 }
 
-.large-screen-navbar li {
+.navbar li {
   display: inline;
   padding: 10px 20px 0 20px;
   margin: 0 10px;
@@ -87,7 +87,7 @@ header {
 }
 
 @media screen and (max-width: 1115px) {
-  .large-screen-navbar ul {
+  .navbar ul {
     display: none;
   }
 }
@@ -158,7 +158,7 @@ header {
 
 /* Media Queries */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   .intro-container {
     width: 80%;
 
@@ -187,7 +187,7 @@ header {
     height: 70px;
     top: 170px;
     margin-left: 25px;
-    animation: smallSlideBox2 1100ms ease-out 5300ms forwards,
+    animation: smallSlideBox2 1000ms ease-out 5300ms forwards,
       flashOpacity 600ms ease-in-out 5000ms 3 forwards;
   }
 
@@ -200,7 +200,7 @@ header {
       flashOpacity 600ms ease-in-out 6000ms 5 forwards;
   }
 
-  .large-screen-navbar {
+  .navbar {
     height: 90px;
     animation-duration: 700ms;
     animation-delay: 7s;
