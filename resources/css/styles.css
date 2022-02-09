@@ -99,7 +99,7 @@ header {
     opacity: 0;
   }
   100% {
-    opacity: 90%;
+    opacity: 85%;
   }
 }
 
@@ -179,7 +179,7 @@ header {
     top: 100px;
     margin-left: 25px;
     animation: smallSlideBox1 600ms ease-out 4s forwards,
-      flashOpacity 600ms ease-in-out 9 forwards;
+      flashOpacity 600ms ease-in-out 8 forwards;
   }
 
   .cover-box#box-2 {
@@ -201,9 +201,34 @@ header {
   }
 
   .navbar {
+    grid-template-columns: 1fr;
     height: 90px;
     animation-duration: 700ms;
     animation-delay: 7s;
+  }
+
+  @keyframes menuFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  .menu-icon {
+    margin: auto;
+    opacity: 0;
+    animation: menuFadeIn 700ms ease-in-out 7800ms forwards;
+    border: 5px solid white;
+    border-radius: 15px;
+  }
+
+  .menu-icon-bar {
+    width: 40px;
+    height: 5px;
+    background-color: rgb(190, 123, 168);
+    margin: 10px;
   }
 }
 
