@@ -5,20 +5,25 @@ html {
 body {
   box-sizing: border-box;
   margin: 0;
+  height: 2000px;
+  overflow-x: hidden !important;
 }
 
 header {
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 1;
 }
 
+main {
+  overflow-x: hidden !important;
+}
 @keyframes paintBackground {
   0% {
     width: 0;
   }
   100% {
-    width: 140%;
+    width: 3000px;
   }
 }
 
@@ -26,32 +31,32 @@ header {
   position: absolute;
   width: 0;
   height: 500px;
-
   /*border: 12px solid rgb(0, 0, 0);
   border-style: solid none solid none;*/
   opacity: 30%;
   border-radius: 20px;
-
   animation: paintBackground ease-in-out forwards;
   z-index: -1;
+  overflow: hidden;
 }
 
 .banana#left {
-  left: -100px;
+  left: -50px;
 }
 
 .banana#right {
-  right: -100px;
+  right: -50px;
 }
 
 /* Navbar for large screens */
 
 .navbar {
+  position: relative;
   display: grid;
   grid-template-columns: 50% 50%;
   background-color: rgb(255, 164, 225);
   width: 0;
-  height: 75px;
+  height: 90px;
   margin: 0;
   border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
@@ -83,7 +88,6 @@ header {
   background-color: rgb(190, 123, 168);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  pointer-events: auto;
 }
 
 .menu-icon {
@@ -97,6 +101,9 @@ header {
 }
 
 /* Introduction Section */
+
+.intro-animation-container {
+}
 
 @keyframes growIntroWidth {
   0% {
@@ -118,6 +125,7 @@ header {
   border-top-left-radius: 15px 250px;
   border-top-right-radius: 250px 15px;
   border-bottom-left-radius: 200px 25px;
+  border-bottom-right-radius: 20px 270px;
   background-color: rgb(131, 228, 131);
   overflow: hidden;
   opacity: 0;
@@ -165,7 +173,6 @@ header {
 @media screen and (max-width: 650px) {
   .intro-container {
     width: 80%;
-
     margin: 25px auto;
   }
 
@@ -191,8 +198,8 @@ header {
     height: 70px;
     top: 170px;
     margin-left: 25px;
-    animation: smallSlideBox2 1000ms ease-out 5300ms forwards,
-      flashOpacity 600ms ease-in-out 5000ms 3 forwards;
+    animation: smallSlideBox2 900ms ease-out 5300ms forwards,
+      flashOpacity 600ms ease-in-out 5000ms 2;
   }
 
   .cover-box#box-3 {
@@ -200,8 +207,8 @@ header {
     height: 70px;
     top: 235px;
     margin-left: 25px;
-    animation: smallSlideBox3 1200ms ease-out 6200ms forwards,
-      flashOpacity 600ms ease-in-out 6000ms 5 forwards;
+    animation: smallSlideBox3 1100ms ease-out 6000ms forwards,
+      flashOpacity 600ms ease-in-out 5950ms 5 forwards;
   }
 
   .navbar {
