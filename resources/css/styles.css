@@ -208,7 +208,7 @@ main {
     top: 235px;
     margin-left: 25px;
     animation: smallSlideBox3 1100ms ease-out 6000ms forwards,
-      flashOpacity 600ms ease-in-out 5950ms 5 forwards;
+      flashOpacity 600ms ease-in-out 5950ms 4;
   }
 
   .navbar {
