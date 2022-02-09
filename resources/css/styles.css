@@ -18,35 +18,30 @@ header {
     width: 0;
   }
   100% {
-    width: 3000px;
+    width: 140%;
   }
 }
 
 .banana {
-  left: -100px;
   position: absolute;
   width: 0;
-  height: 100px;
-  background-color: rgb(163, 104, 143);
-  border: 12px solid rgb(128, 81, 112);
-  border-style: solid none solid none;
-  opacity: 75%;
+  height: 500px;
+
+  /*border: 12px solid rgb(0, 0, 0);
+  border-style: solid none solid none;*/
+  opacity: 30%;
+  border-radius: 20px;
 
   animation: paintBackground ease-in-out forwards;
   z-index: -1;
 }
 
-.orange {
+.banana#left {
+  left: -100px;
+}
+
+.banana#right {
   right: -100px;
-  position: absolute;
-  width: 0;
-  height: 100px;
-  background-color: rgb(163, 104, 143);
-  border: 12px solid rgb(128, 81, 112);
-  border-style: solid none solid none;
-  opacity: 75%;
-  animation: paintBackground ease forwards;
-  z-index: -1;
 }
 
 /* Navbar for large screens */
@@ -60,7 +55,7 @@ header {
   margin: 0;
   border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
-  animation: navSlide 1s ease 4s forwards;
+  animation: navSlide 1s ease 7s forwards;
 }
 
 .large-screen-navbar ul {
@@ -72,7 +67,7 @@ header {
   margin: 0;
   padding: 20px 20px 0 20px;
   opacity: 0;
-  animation: navFadeIn 500ms ease 5000ms forwards;
+  animation: navFadeIn 500ms ease 8s forwards;
 }
 
 .large-screen-navbar a {
@@ -100,19 +95,19 @@ header {
 /* Introduction Section */
 
 .intro-container {
-  display: none;
   position: relative;
   display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr 1fr;
   width: 80%;
   height: 800px;
-  margin: 75px auto;
+  margin: 8% auto;
   border-top-left-radius: 15px 250px;
   border-top-right-radius: 250px 15px;
   border-bottom-left-radius: 200px 25px;
   background-color: rgb(131, 228, 131);
   overflow: hidden;
+  opacity: 90%;
 }
 
 .intro-container h1 {
@@ -139,8 +134,8 @@ header {
   border-style: none none none solid;
   border-color: rgb(131, 228, 131);
   z-index: 3;
-  animation: slideBox 3s ease-in-out 1s forwards,
-    flashOpacity 600ms ease-in-out 8 forwards;
+  animation: slideBox 3s ease-in-out 4s forwards,
+    flashOpacity 600ms ease-in-out 13 forwards;
 }
 
 .cover-box#box-2 {
