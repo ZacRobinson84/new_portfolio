@@ -166,7 +166,7 @@ header {
 }
 
 .circle-background {
-  display: none;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   width: 500px;
@@ -193,6 +193,7 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     width: 80%;
+    height: 700px;
     margin: 25px auto;
   }
 
@@ -205,9 +206,54 @@ header {
     display: inline;
   }
 
+  .circle-background {
+    width: 200px;
+    height: 200px;
+    grid-template-columns: 200px;
+    grid-template-rows: 200px;
+    grid-row: span 1;
+    opacity: 0;
+    cursor: pointer;
+    animation: fadeCircle 1500ms ease-in-out 8300ms forwards;
+  }
+
+  @keyframes arrowDrop {
+    0% {
+      top: 250px;
+    }
+    93% {
+      color: rgb(131, 228, 131);
+    }
+    100% {
+      top: 430px;
+      color: black;
+    }
+  }
+
+  @keyframes fadeCircle {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  .circle-background h2 {
+    color: rgb(131, 228, 131);
+    position: absolute;
+    top: 250px;
+    align-self: center;
+    justify-self: center;
+    margin: 0;
+    padding-bottom: 14px;
+    transform: rotate(90deg);
+    animation: arrowDrop 1800ms ease-in-out 9s forwards;
+  }
+
   .cover-box#box-1 {
     height: 70px;
-    top: 100px;
+    top: 75px;
     margin-left: 25px;
     animation: smallSlideBox1 600ms ease-out 4s forwards,
       flashOpacity 600ms ease-in-out 8 forwards;
@@ -216,7 +262,7 @@ header {
   .cover-box#box-2 {
     display: inline;
     height: 70px;
-    top: 170px;
+    top: 150px;
     margin-left: 25px;
     animation: smallSlideBox2 900ms ease-out 5300ms forwards,
       flashOpacity 600ms ease-in-out 5000ms 2 forwards;
@@ -225,7 +271,7 @@ header {
   .cover-box#box-3 {
     display: inline;
     height: 70px;
-    top: 235px;
+    top: 205px;
     margin-left: 25px;
     animation: smallSlideBox3 1100ms ease-out 5950ms forwards,
       flashOpacity 600ms ease-in-out 5900ms 4 forwards;
