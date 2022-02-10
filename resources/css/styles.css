@@ -114,7 +114,7 @@ header {
 .intro-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 58% 42%;
   grid-template-rows: 1fr 1fr;
   width: 80%;
   height: 800px;
@@ -165,10 +165,33 @@ header {
   display: none;
 }
 
+.circle-background {
+  display: none;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  width: 500px;
+  height: 500px;
+  grid-row: span 2;
+  justify-self: center;
+  align-self: center;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 4;
+}
+
+.circle-background h2 {
+  font-size: 8rem;
+  grid-column: span 1;
+  justify-self: center;
+  align-self: center;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 650px) {
   .intro-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     width: 80%;
     margin: 25px auto;
   }
@@ -204,8 +227,8 @@ header {
     height: 70px;
     top: 235px;
     margin-left: 25px;
-    animation: smallSlideBox3 1100ms ease-out 6000ms forwards,
-      flashOpacity 600ms ease-in-out 5950ms 4 forwards;
+    animation: smallSlideBox3 1100ms ease-out 5950ms forwards,
+      flashOpacity 600ms ease-in-out 5900ms 4 forwards;
   }
 
   .navbar {

@@ -1,9 +1,11 @@
 document.body.onload = addElement;
 
+// create a random number between a certain range
 function getRandNum(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+// create a random rgb color string
 function getRandRGB() {
   let a = getRandNum(0, 255).toString();
   let b = getRandNum(0, 255).toString();
@@ -12,10 +14,11 @@ function getRandRGB() {
   return rgbValue;
 }
 
+// generate a series of styled divs for background intro animation
 function createDivs(divClass, divID, rotateRoll) {
   for (let i = 0; i < 10; i++) {
     setTimeout(() => {
-      let randNumY = getRandNum(25, 1100);
+      let randNumY = getRandNum(0, 1100);
       let randDelay = getRandNum(0, 1000);
       let randDuration = getRandNum(300, 1000);
       let randRotate = getRandNum(0, rotateRoll);
@@ -33,6 +36,7 @@ function createDivs(divClass, divID, rotateRoll) {
   }
 }
 
+// divide the background intro divs into left and right starting positions
 function addElement() {
   createDivs("banana", "left", 8);
   createDivs("banana", "right", -8);
