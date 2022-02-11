@@ -186,6 +186,10 @@ header {
   align-self: center;
 }
 
+.drop-menu {
+  display: none;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 650px) {
@@ -215,28 +219,6 @@ header {
     opacity: 0;
     cursor: pointer;
     animation: fadeCircle 1500ms ease-in-out 8300ms forwards;
-  }
-
-  @keyframes arrowDrop {
-    0% {
-      top: 250px;
-    }
-    93% {
-      color: rgb(131, 228, 131);
-    }
-    100% {
-      top: 430px;
-      color: black;
-    }
-  }
-
-  @keyframes fadeCircle {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 100%;
-    }
   }
 
   .circle-background h2 {
@@ -277,20 +259,14 @@ header {
       flashOpacity 600ms ease-in-out 5900ms 4 forwards;
   }
 
+  /* Small screen Nav and drop menu */
+
   .navbar {
     grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     height: 90px;
     animation-duration: 700ms;
     animation-delay: 7s;
-  }
-
-  @keyframes menuFadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 100%;
-    }
   }
 
   .menu-icon {
@@ -300,6 +276,7 @@ header {
     animation: menuFadeIn 700ms ease-in-out 7800ms forwards;
     border: 5px solid white;
     border-radius: 15px;
+    cursor: pointer;
   }
 
   .menu-icon-bar {
@@ -307,6 +284,16 @@ header {
     height: 5px;
     background-color: rgb(190, 123, 168);
     margin: 10px;
+  }
+
+  .drop-menu.active {
+    display: grid;
+    position: absolute;
+    top: 98px;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    opacity: 90%;
   }
 }
 
@@ -397,5 +384,36 @@ header {
   }
   100% {
     border-color: rgb(131, 228, 131);
+  }
+}
+
+@keyframes menuFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes arrowDrop {
+  0% {
+    top: 250px;
+  }
+  93% {
+    color: rgb(131, 228, 131);
+  }
+  100% {
+    top: 430px;
+    color: black;
+  }
+}
+
+@keyframes fadeCircle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
   }
 }

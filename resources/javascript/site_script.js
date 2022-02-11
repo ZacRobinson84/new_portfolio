@@ -41,3 +41,14 @@ function addElement() {
   createDivs("banana", "left", 8);
   createDivs("banana", "right", -8);
 }
+
+// drop-menu functions
+
+function dropMenu() {
+  x = document.getElementById("dropMenu");
+  if (x.className === "drop-menu") {
+    x.className += " active";
+  } else {
+    x.className = "drop-menu";
+  }
+}
