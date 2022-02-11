@@ -197,7 +197,7 @@ header {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     width: 80%;
-    height: 700px;
+    height: 70vh;
     margin: 25px auto;
   }
 
@@ -224,7 +224,7 @@ header {
   .circle-background h2 {
     color: rgb(131, 228, 131);
     position: absolute;
-    top: 250px;
+    top: 195px;
     align-self: center;
     justify-self: center;
     margin: 0;
@@ -235,7 +235,7 @@ header {
 
   .cover-box#box-1 {
     height: 70px;
-    top: 75px;
+    top: 50px;
     margin-left: 25px;
     animation: smallSlideBox1 600ms ease-out 4s forwards,
       flashOpacity 600ms ease-in-out 8 forwards;
@@ -244,7 +244,7 @@ header {
   .cover-box#box-2 {
     display: inline;
     height: 70px;
-    top: 150px;
+    top: 120px;
     margin-left: 25px;
     animation: smallSlideBox2 900ms ease-out 5300ms forwards,
       flashOpacity 600ms ease-in-out 5000ms 2 forwards;
@@ -253,7 +253,7 @@ header {
   .cover-box#box-3 {
     display: inline;
     height: 70px;
-    top: 205px;
+    top: 185px;
     margin-left: 25px;
     animation: smallSlideBox3 1100ms ease-out 5950ms forwards,
       flashOpacity 600ms ease-in-out 5900ms 4 forwards;
@@ -398,13 +398,13 @@ header {
 
 @keyframes arrowDrop {
   0% {
-    top: 250px;
+    top: 195px;
   }
   93% {
     color: rgb(131, 228, 131);
   }
   100% {
-    top: 430px;
+    top: 360px;
     color: black;
   }
 }
