@@ -3,7 +3,6 @@ body {
   font-family: "Fredoka One", cursive;
   box-sizing: border-box;
   margin: 0;
-  height: 100%;
 }
 
 header {
@@ -12,13 +11,8 @@ header {
   z-index: 1;
 }
 
-@keyframes paintBackground {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 3000px;
-  }
+main {
+  height: 100vh;
 }
 
 .banana {
@@ -115,10 +109,11 @@ header {
   position: relative;
   display: grid;
   grid-template-columns: 58% 42%;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
   width: 80%;
   height: 800px;
   margin: 8% auto;
+  padding-top: 10%;
   border-top-left-radius: 15px 250px;
   border-top-right-radius: 250px 15px;
   border-bottom-left-radius: 200px 25px;
@@ -137,18 +132,26 @@ header {
   align-self: center;
 }
 
-.intro-container h1 br {
-  display: none;
+#hi {
+  grid-row: 1 / 2;
+}
+
+#imzac {
+  grid-row: 2 / 3;
+}
+
+#robinson {
+  grid-row: 3 / 4;
 }
 
 .cover-box {
   position: absolute;
   grid-column: 1 / 2;
   background-color: rgb(131, 228, 131);
-  margin-left: 60px;
-  width: 1500px;
+
+  width: 500px;
   height: 120px;
-  top: 140px;
+
   border: 15px;
   border-style: none none none solid;
   border-color: rgb(131, 228, 131);
@@ -184,6 +187,7 @@ header {
   grid-column: span 1;
   justify-self: center;
   align-self: center;
+  opacity: 0;
 }
 
 .drop-menu {
@@ -192,20 +196,34 @@ header {
 
 /* Media Queries */
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 821px) {
   .intro-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 65%;
     width: 80%;
-    height: 70vh;
+    height: 65%;
     margin: 25px auto;
   }
 
   .intro-container h1 {
-    font-size: 3.5rem;
-    margin: 25px;
+    width: fit-content;
+    font-size: 6.5vh;
+    margin: 0;
+    margin-left: 10%;
   }
 
+  #hi {
+    grid-column: span 1;
+    grid-row: 1 / 2;
+  }
+
+  #imzac {
+    grid-row: 2 / 3;
+  }
+
+  #robinson {
+    grid-row: 3 / 4;
+  }
   .intro-container h1 br {
     display: inline;
   }
@@ -215,47 +233,46 @@ header {
     height: 200px;
     grid-template-columns: 200px;
     grid-template-rows: 200px;
-    grid-row: span 1;
+    grid-row: 4 / 5;
     opacity: 0;
     cursor: pointer;
     animation: fadeCircle 1500ms ease-in-out 8300ms forwards;
   }
 
   .circle-background h2 {
-    color: rgb(131, 228, 131);
-    position: absolute;
-    top: 195px;
+    color: rgb(0, 0, 0);
+    position: relative;
     align-self: center;
     justify-self: center;
     margin: 0;
     padding-bottom: 14px;
     transform: rotate(90deg);
-    animation: arrowDrop 1800ms ease-in-out 9s forwards;
+    animation: arrowFade 1800ms ease-in-out 9s forwards;
+  }
+
+  .cover-box {
+    margin-left: 10%;
+    object-fit: contain;
+    max-height: 100%;
   }
 
   .cover-box#box-1 {
-    height: 70px;
-    top: 50px;
-    margin-left: 25px;
+    grid-row: 1 / 2;
     animation: smallSlideBox1 600ms ease-out 4s forwards,
       flashOpacity 600ms ease-in-out 8 forwards;
   }
 
   .cover-box#box-2 {
     display: inline;
-    height: 70px;
-    top: 120px;
-    margin-left: 25px;
-    animation: smallSlideBox2 900ms ease-out 5300ms forwards,
-      flashOpacity 600ms ease-in-out 5000ms 2 forwards;
+    grid-row: 2 / 3;
+    animation: smallSlideBox2 1000ms ease-out 5300ms forwards,
+      flashOpacity 600ms ease-in-out 5000ms 3 forwards;
   }
 
   .cover-box#box-3 {
     display: inline;
-    height: 70px;
-    top: 185px;
-    margin-left: 25px;
-    animation: smallSlideBox3 1100ms ease-out 5950ms forwards,
+    grid-row: 3 / 4;
+    animation: smallSlideBox3 1200ms ease-out 5950ms forwards,
       flashOpacity 600ms ease-in-out 5900ms 4 forwards;
   }
 
@@ -299,42 +316,39 @@ header {
 
 /* Keyframes */
 
-@keyframes smallSlideBox1 {
+@keyframes paintBackground {
   0% {
-    transform: translate(0);
-  }
-  10% {
-    transform: translate(0);
+    width: 0;
   }
   100% {
-    transform: translate(80px);
-    display: none;
+    width: 3000px;
+  }
+}
+
+@keyframes smallSlideBox1 {
+  0% {
+  }
+  100% {
+    transform: translate(var(--x-axis-move-slidebox1));
+    visibility: hidden;
   }
 }
 
 @keyframes smallSlideBox2 {
   0% {
-    transform: translate(0);
-  }
-  10% {
-    transform: translate(0);
   }
   100% {
-    transform: translate(200px);
-    display: none;
+    transform: translate(var(--x-axis-move-slidebox2));
+    visibility: hidden;
   }
 }
 
 @keyframes smallSlideBox3 {
   0% {
-    transform: translate(0);
-  }
-  10% {
-    transform: translate(0);
   }
   100% {
-    transform: translate(265px);
-    display: none;
+    transform: translate(var(--x-axis-move-slidebox3));
+    visibility: hidden;
   }
 }
 
@@ -396,16 +410,12 @@ header {
   }
 }
 
-@keyframes arrowDrop {
+@keyframes arrowFade {
   0% {
-    top: 195px;
-  }
-  93% {
-    color: rgb(131, 228, 131);
+    opacity: 0;
   }
   100% {
-    top: 360px;
-    color: black;
+    opacity: 100%;
   }
 }
 
@@ -416,4 +426,12 @@ header {
   100% {
     opacity: 100%;
   }
+}
+
+/* CSS variables */
+
+:root {
+  --x-axis-move-slidebox1: 0px;
+  --x-axis-move-slidebox2: 0px;
+  --x-axis-move-slidebox3: 0px;
 }

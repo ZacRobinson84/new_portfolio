@@ -1,4 +1,9 @@
-document.body.onload = addElement;
+window.addEventListener("load", myInit);
+
+function myInit() {
+  setTranslation();
+  addElement();
+}
 
 // create a random number between a certain range
 function getRandNum(min, max) {
@@ -43,7 +48,6 @@ function addElement() {
 }
 
 // drop-menu functions
-
 function dropMenu() {
   x = document.getElementById("dropMenu");
   if (x.className === "drop-menu") {
@@ -51,4 +55,17 @@ function dropMenu() {
   } else {
     x.className = "drop-menu";
   }
+}
+
+// Set animation translation on cover-box divs //
+function setTranslation() {
+  setTimeout(() => {
+    let root = document.documentElement;
+    let slideBox1 = document.getElementById("hi").offsetWidth + 3;
+    let slideBox2 = document.getElementById("imzac").offsetWidth + 3;
+    let slideBox3 = document.getElementById("robinson").offsetWidth + 3;
+    root.style.setProperty("--x-axis-move-slidebox1", slideBox1 + "px");
+    root.style.setProperty("--x-axis-move-slidebox2", slideBox2 + "px");
+    root.style.setProperty("--x-axis-move-slidebox3", slideBox3 + "px");
+  }, 200);
 }
