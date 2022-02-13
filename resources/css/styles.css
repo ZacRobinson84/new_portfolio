@@ -148,13 +148,8 @@ main {
   position: absolute;
   grid-column: 1 / 2;
   background-color: rgb(131, 228, 131);
-
   width: 500px;
   height: 120px;
-
-  border: 15px;
-  border-style: none none none solid;
-  border-color: rgb(131, 228, 131);
   z-index: 3;
   animation: slideBox 3s ease-in-out 4s forwards,
     flashOpacity 600ms ease-in-out 13 forwards;
@@ -258,24 +253,22 @@ main {
 
   .cover-box#box-1 {
     grid-row: 1 / 2;
-    animation: smallSlideBox1 var(--anim-duration-slidebox1) ease 4s forwards,
-      flashOpacity 600ms ease-in-out 8 forwards;
+    animation: smallSlideBox1 var(--anim-duration-slidebox1) ease-out 4s
+      forwards;
   }
 
   .cover-box#box-2 {
     display: inline;
     grid-row: 2 / 3;
-    animation: smallSlideBox2 var(--anim-duration-slidebox2) ease
-        var(--anim-delay-slidebox2) forwards,
-      flashOpacity 600ms ease-in-out 5000ms infinite forwards;
+    animation: smallSlideBox2 var(--anim-duration-slidebox2) linear
+      var(--anim-delay-slidebox2) forwards;
   }
 
   .cover-box#box-3 {
     display: inline;
     grid-row: 3 / 4;
-    animation: smallSlideBox3 var(--anim-duration-slidebox3) ease
-        var(--anim-delay-slidebox3) forwards,
-      flashOpacity 600ms ease-in-out 5900ms infinite forwards;
+    animation: smallSlideBox3 var(--anim-duration-slidebox3) ease-out
+      var(--anim-delay-slidebox3) forwards;
   }
 
   /* Small screen Nav and drop menu */

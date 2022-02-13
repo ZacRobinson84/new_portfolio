@@ -67,9 +67,18 @@ function setAnimationValues() {
     root.style.setProperty("--x-axis-move-slidebox1", slideBox1 + "px");
     root.style.setProperty("--x-axis-move-slidebox2", slideBox2 + "px");
     root.style.setProperty("--x-axis-move-slidebox3", slideBox3 + "px");
-    root.style.setProperty("--anim-duration-slidebox1", `${slideBox1 * 4}ms`);
-    root.style.setProperty("--anim-duration-slidebox2", `${slideBox2 * 4}ms`);
-    root.style.setProperty("--anim-duration-slidebox3", `${slideBox3 * 4}ms`);
+    root.style.setProperty(
+      "--anim-duration-slidebox1",
+      `${(slideBox1 * 10) / 4}ms`
+    );
+    root.style.setProperty(
+      "--anim-duration-slidebox2",
+      `${(slideBox2 * 10) / 4}ms`
+    );
+    root.style.setProperty(
+      "--anim-duration-slidebox3",
+      `${(slideBox3 * 10) / 4}ms`
+    );
     root.style.setProperty(
       "--anim-delay-slidebox2",
       `${slideBox1 * 6 + 5000}ms`
