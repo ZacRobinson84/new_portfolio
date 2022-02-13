@@ -1,4 +1,6 @@
-window.addEventListener("load", myInit);
+window.onload = myInit;
+const animated = document.getElementById("box-3");
+animated.addEventListener("animationend", animateDivs);
 
 function myInit() {
   setAnimationValues();
@@ -81,11 +83,16 @@ function setAnimationValues() {
     );
     root.style.setProperty(
       "--anim-delay-slidebox2",
-      `${slideBox1 * 6 + 5000}ms`
+      `${slideBox1 * 6 + 4500}ms`
     );
     root.style.setProperty(
       "--anim-delay-slidebox3",
-      `${slideBox2 * 6 + 5000}ms`
+      `${slideBox2 * 6 + 4400}ms`
     );
   }, 200);
+}
+
+function animateDivs() {
+  document.getElementById("navbar").className += " animated";
+  document.getElementById("menuIcon").className += " animated";
 }

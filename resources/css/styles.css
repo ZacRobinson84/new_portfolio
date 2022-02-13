@@ -47,7 +47,10 @@ main {
   margin: 0;
   border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
-  animation: navSlide 1s ease 7s forwards;
+}
+
+.navbar.animated {
+  animation: navSlide 1s ease forwards;
 }
 
 .navbar ul {
@@ -151,8 +154,7 @@ main {
   width: 500px;
   height: 120px;
   z-index: 3;
-  animation: slideBox 3s ease-in-out 4s forwards,
-    flashOpacity 600ms ease-in-out 13 forwards;
+  animation: slideBox 3s ease-in-out 4s forwards;
 }
 
 .cover-box#box-2 {
@@ -285,10 +287,13 @@ main {
     display: block;
     margin: auto;
     opacity: 0;
-    animation: menuFadeIn 700ms ease-in-out 8600ms forwards;
     border: 5px solid white;
     border-radius: 15px;
     cursor: pointer;
+  }
+
+  .menu-icon.animated {
+    animation: menuFadeIn 1s ease-in-out forwards;
   }
 
   .menu-icon-bar {
@@ -387,15 +392,6 @@ main {
   }
 }
 
-@keyframes flashOpacity {
-  0% {
-    border-color: rgb(91, 138, 91);
-  }
-  100% {
-    border-color: rgb(131, 228, 131);
-  }
-}
-
 @keyframes menuFadeIn {
   0% {
     opacity: 0;
@@ -427,14 +423,12 @@ main {
 
 :root {
   /* distance to move boxes hiding h1 relative to h1 width */
-  --x-axis-move-slidebox1: 0px;
-  --x-axis-move-slidebox2: 0px;
-  --x-axis-move-slidebox3: 0px;
-
-  --anim-duration-slidebox1: 0ms;
-  --anim-duration-slidebox2: 0ms;
-  --anim-duration-slidebox3: 0ms;
-
-  --anim-delay-slidebox2: 0ms;
-  --anim-delay-slidebox3: 0ms;
+  --x-axis-move-slidebox1: undefined;
+  --x-axis-move-slidebox2: undefined;
+  --x-axis-move-slidebox3: undefined;
+  --anim-duration-slidebox1: undefined;
+  --anim-duration-slidebox2: undefined;
+  --anim-duration-slidebox3: undefined;
+  --anim-delay-slidebox2: undefined;
+  --anim-delay-slidebox3: undefined;
 }
