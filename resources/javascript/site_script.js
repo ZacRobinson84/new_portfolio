@@ -4,9 +4,7 @@ window.onload = myInit;
 document.getElementById("box-1").addEventListener("animationend", () => {
   animateDivs("box-2");
 });
-document.getElementById("box-2").addEventListener("animationend", () => {
-  animateDivs("navbar");
-});
+
 document.getElementById("navbar").addEventListener("animationend", () => {
   animateDivs("menuIcon");
 });

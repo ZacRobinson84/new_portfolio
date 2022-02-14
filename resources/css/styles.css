@@ -47,10 +47,7 @@ main {
   margin: 0;
   border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
-}
-
-.navbar.animated {
-  animation: navSlide 1s ease forwards;
+  animation: navSlide 3s ease forwards;
 }
 
 .navbar ul {
@@ -239,7 +236,7 @@ main {
     grid-template-rows: 1fr;
     height: 90px;
     animation-duration: 700ms;
-    animation-delay: 7800ms;
+    animation-delay: 3500ms;
   }
 
   .menu-icon {
