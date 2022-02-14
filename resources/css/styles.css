@@ -232,7 +232,11 @@ main {
     grid-row: 4 / 5;
     opacity: 0;
     cursor: pointer;
-    animation: fadeCircle 1500ms ease-in-out 8300ms forwards;
+    box-shadow: 5px 5px rgb(98, 170, 98, 0.7);
+  }
+
+  .circle-background.animated {
+    animation: fadeCircle 1500ms ease-in-out forwards;
   }
 
   .circle-background h2 {

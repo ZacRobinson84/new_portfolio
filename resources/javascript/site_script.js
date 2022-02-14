@@ -1,17 +1,20 @@
 window.onload = myInit;
 
 //Animation eventlisteners
+document.getElementById("box-1").addEventListener("animationend", () => {
+  animateDivs("box-2");
+});
+document.getElementById("box-2").addEventListener("animationend", () => {
+  animateDivs("box-3");
+});
 document.getElementById("box-3").addEventListener("animationend", () => {
   animateDivs("navbar");
 });
 document.getElementById("navbar").addEventListener("animationend", () => {
   animateDivs("menuIcon");
 });
-document.getElementById("box-1").addEventListener("animationend", () => {
-  animateDivs("box-2");
-});
-document.getElementById("box-2").addEventListener("animationend", () => {
-  animateDivs("box-3");
+document.getElementById("navbar").addEventListener("animationend", () => {
+  animateDivs("circleBackground");
 });
 
 function myInit() {
