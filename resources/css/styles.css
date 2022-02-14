@@ -154,7 +154,6 @@ main {
   width: 500px;
   height: 120px;
   z-index: 3;
-  animation: slideBox 3s ease-in-out 4s forwards;
 }
 
 .cover-box#box-2 {
@@ -255,22 +254,26 @@ main {
 
   .cover-box#box-1 {
     grid-row: 1 / 2;
-    animation: smallSlideBox1 var(--anim-duration-slidebox1) ease-out 4s
-      forwards;
+    animation: smallSlideBox1 var(--anim-duration-slidebox1) ease-in 4s forwards;
   }
 
   .cover-box#box-2 {
     display: inline;
     grid-row: 2 / 3;
-    animation: smallSlideBox2 var(--anim-duration-slidebox2) linear
-      var(--anim-delay-slidebox2) forwards;
+  }
+
+  #box-2.cover-box.animated {
+    animation: smallSlideBox2 var(--anim-duration-slidebox2) linear 500ms
+      forwards;
   }
 
   .cover-box#box-3 {
     display: inline;
     grid-row: 3 / 4;
-    animation: smallSlideBox3 var(--anim-duration-slidebox3) ease-out
-      var(--anim-delay-slidebox3) forwards;
+  }
+
+  #box-3.cover-box.animated {
+    animation: smallSlideBox3 var(--anim-duration-slidebox3) ease-out forwards;
   }
 
   /* Small screen Nav and drop menu */

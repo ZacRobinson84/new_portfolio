@@ -1,6 +1,18 @@
 window.onload = myInit;
-const animated = document.getElementById("box-3");
-animated.addEventListener("animationend", animateDivs);
+
+//Animation eventlisteners
+document.getElementById("box-3").addEventListener("animationend", () => {
+  animateDivs("navbar");
+});
+document.getElementById("navbar").addEventListener("animationend", () => {
+  animateDivs("menuIcon");
+});
+document.getElementById("box-1").addEventListener("animationend", () => {
+  animateDivs("box-2");
+});
+document.getElementById("box-2").addEventListener("animationend", () => {
+  animateDivs("box-3");
+});
 
 function myInit() {
   setAnimationValues();
@@ -71,28 +83,19 @@ function setAnimationValues() {
     root.style.setProperty("--x-axis-move-slidebox3", slideBox3 + "px");
     root.style.setProperty(
       "--anim-duration-slidebox1",
-      `${(slideBox1 * 10) / 4}ms`
+      `${(slideBox1 * 10) / 2}ms`
     );
     root.style.setProperty(
       "--anim-duration-slidebox2",
-      `${(slideBox2 * 10) / 4}ms`
+      `${(slideBox2 * 10) / 2}ms`
     );
     root.style.setProperty(
       "--anim-duration-slidebox3",
-      `${(slideBox3 * 10) / 4}ms`
-    );
-    root.style.setProperty(
-      "--anim-delay-slidebox2",
-      `${slideBox1 * 6 + 4500}ms`
-    );
-    root.style.setProperty(
-      "--anim-delay-slidebox3",
-      `${slideBox2 * 6 + 4400}ms`
+      `${(slideBox3 * 10) / 2}ms`
     );
   }, 200);
 }
 
-function animateDivs() {
-  document.getElementById("navbar").className += " animated";
-  document.getElementById("menuIcon").className += " animated";
+function animateDivs(divId) {
+  document.getElementById(divId).className += " animated";
 }
