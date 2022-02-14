@@ -116,7 +116,7 @@ main {
   width: 80%;
   height: 800px;
   margin: 8% auto;
-  padding-top: 10%;
+  padding: 0;
   border-top-left-radius: 15px 250px;
   border-top-right-radius: 250px 15px;
   border-bottom-left-radius: 200px 25px;
@@ -137,32 +137,14 @@ main {
 
 #hi {
   grid-row: 1 / 2;
-  z-index: 4;
 }
 
 #imzac {
   grid-row: 2 / 3;
-  z-index: 4;
 }
 
 #robinson {
   grid-row: 3 / 4;
-}
-
-.cover-box {
-  position: absolute;
-  grid-column: 1 / 2;
-  background-color: rgb(131, 228, 131);
-  width: 500px;
-  height: 120px;
-  z-index: 3;
-}
-
-.cover-box#box-2 {
-  display: none;
-}
-
-.cover-box#box-3 {
 }
 
 .drop-menu {
@@ -198,6 +180,7 @@ main {
   }
 
   #hi {
+    margin-top: 10%;
     grid-column: span 1;
     grid-row: 1 / 2;
   }
@@ -213,36 +196,13 @@ main {
     display: inline;
   }
 
-  .cover-box {
-    margin-left: 10%;
-    object-fit: contain;
-    max-height: 100%;
-  }
-
-  .cover-box#box-1 {
-    grid-row: 1 / 2;
-    animation: smallSlideBox1 var(--anim-duration-slidebox1) ease-in 4s forwards;
-    z-index: 5;
-  }
-
-  .cover-box#box-2 {
-    display: inline;
-    grid-row: 2 / 3;
-    z-index: 5;
-  }
-
-  #box-2.cover-box.animated {
-    animation: smallSlideBox2 var(--anim-duration-slidebox2) linear 500ms
-      forwards;
-  }
-
   @keyframes box3Rotation {
     from {
       top: 0;
       transform: translateX(-50%) rotate(0);
     }
     to {
-      top: 400px;
+      top: 90%;
       transform: translateX(-50%) rotate(360deg);
     }
   }
@@ -256,6 +216,7 @@ main {
   }
 
   #box-3 {
+    position: absolute;
     background-color: rgb(167, 230, 167);
     object-fit: none;
     max-height: none;
@@ -263,12 +224,12 @@ main {
     left: 50%;
     transform: translateX(-50%);
     top: -40%;
-    width: 2500px;
-    height: 2500px;
+    width: 4000px;
+    height: 4000px;
     margin: 0 auto;
-    border-radius: 40%;
+    border-radius: 42%;
 
-    animation: box3Rotation 20s ease-in-out 3s forwards;
+    animation: box3Rotation 20s ease-in-out forwards;
   }
 
   /* Small screen Nav and drop menu */
@@ -323,24 +284,6 @@ main {
   }
 }
 
-@keyframes smallSlideBox1 {
-  0% {
-  }
-  100% {
-    transform: translate(var(--x-axis-move-slidebox1));
-    visibility: hidden;
-  }
-}
-
-@keyframes smallSlideBox2 {
-  0% {
-  }
-  100% {
-    transform: translate(var(--x-axis-move-slidebox2));
-    visibility: hidden;
-  }
-}
-
 @keyframes slideBox {
   0% {
     transform: translate(0);
@@ -390,31 +333,4 @@ main {
   }
 }
 
-@keyframes arrowFade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
-@keyframes fadeCircle {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 100%;
-  }
-}
-
 /* CSS variables */
-
-:root {
-  /* distance to move boxes hiding h1 relative to h1 width */
-  --x-axis-move-slidebox1: undefined;
-  --x-axis-move-slidebox2: undefined;
-  --anim-duration-slidebox1: undefined;
-  --anim-duration-slidebox2: undefined;
-  --anim-delay-slidebox2: undefined;
-}
