@@ -5,9 +5,6 @@ document.getElementById("box-1").addEventListener("animationend", () => {
   animateDivs("box-2");
 });
 document.getElementById("box-2").addEventListener("animationend", () => {
-  animateDivs("box-3");
-});
-document.getElementById("box-3").addEventListener("animationend", () => {
   animateDivs("navbar");
 });
 document.getElementById("navbar").addEventListener("animationend", () => {
@@ -80,10 +77,10 @@ function setAnimationValues() {
     let root = document.documentElement;
     let slideBox1 = document.getElementById("hi").offsetWidth + 3;
     let slideBox2 = document.getElementById("imzac").offsetWidth + 3;
-    let slideBox3 = document.getElementById("robinson").offsetWidth + 3;
+
     root.style.setProperty("--x-axis-move-slidebox1", slideBox1 + "px");
     root.style.setProperty("--x-axis-move-slidebox2", slideBox2 + "px");
-    root.style.setProperty("--x-axis-move-slidebox3", slideBox3 + "px");
+
     root.style.setProperty(
       "--anim-duration-slidebox1",
       `${(slideBox1 * 10) / 2}ms`
@@ -91,10 +88,6 @@ function setAnimationValues() {
     root.style.setProperty(
       "--anim-duration-slidebox2",
       `${(slideBox2 * 10) / 2}ms`
-    );
-    root.style.setProperty(
-      "--anim-duration-slidebox3",
-      `${(slideBox3 * 10) / 2}ms`
     );
   }, 200);
 }

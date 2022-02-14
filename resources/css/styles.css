@@ -137,10 +137,12 @@ main {
 
 #hi {
   grid-row: 1 / 2;
+  z-index: 4;
 }
 
 #imzac {
   grid-row: 2 / 3;
+  z-index: 4;
 }
 
 #robinson {
@@ -161,29 +163,6 @@ main {
 }
 
 .cover-box#box-3 {
-  display: none;
-}
-
-.circle-background {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  width: 500px;
-  height: 500px;
-  grid-row: span 2;
-  justify-self: center;
-  align-self: center;
-  background-color: white;
-  border-radius: 50%;
-  z-index: 4;
-}
-
-.circle-background h2 {
-  font-size: 8rem;
-  grid-column: span 1;
-  justify-self: center;
-  align-self: center;
-  opacity: 0;
 }
 
 .drop-menu {
@@ -197,7 +176,7 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 65%;
     width: 80%;
-    height: 65%;
+    height: 70%;
     margin: 25px auto;
   }
 
@@ -206,6 +185,16 @@ main {
     font-size: 6.5vh;
     margin: 0;
     margin-left: 10%;
+    padding: 0 7px;
+  }
+
+  .intro-container h2 {
+    grid-row: 3 / 4;
+    color: rgb(41, 41, 41);
+    font-size: 5vh;
+    justify-self: center;
+    margin: 5% 0 0 10%;
+    padding: 0 7px;
   }
 
   #hi {
@@ -224,32 +213,6 @@ main {
     display: inline;
   }
 
-  .circle-background {
-    width: 200px;
-    height: 200px;
-    grid-template-columns: 200px;
-    grid-template-rows: 200px;
-    grid-row: 4 / 5;
-    opacity: 0;
-    cursor: pointer;
-    box-shadow: 5px 5px rgb(98, 170, 98, 0.7);
-  }
-
-  .circle-background.animated {
-    animation: fadeCircle 1500ms ease-in-out forwards;
-  }
-
-  .circle-background h2 {
-    color: rgb(0, 0, 0);
-    position: relative;
-    align-self: center;
-    justify-self: center;
-    margin: 0;
-    padding-bottom: 14px;
-    transform: rotate(90deg);
-    animation: arrowFade 1800ms ease-in-out 9s forwards;
-  }
-
   .cover-box {
     margin-left: 10%;
     object-fit: contain;
@@ -259,11 +222,13 @@ main {
   .cover-box#box-1 {
     grid-row: 1 / 2;
     animation: smallSlideBox1 var(--anim-duration-slidebox1) ease-in 4s forwards;
+    z-index: 5;
   }
 
   .cover-box#box-2 {
     display: inline;
     grid-row: 2 / 3;
+    z-index: 5;
   }
 
   #box-2.cover-box.animated {
@@ -271,13 +236,39 @@ main {
       forwards;
   }
 
-  .cover-box#box-3 {
-    display: inline;
-    grid-row: 3 / 4;
+  @keyframes box3Rotation {
+    from {
+      top: 0;
+      transform: translateX(-50%) rotate(0);
+    }
+    to {
+      top: 400px;
+      transform: translateX(-50%) rotate(360deg);
+    }
   }
 
-  #box-3.cover-box.animated {
-    animation: smallSlideBox3 var(--anim-duration-slidebox3) ease-out forwards;
+  #waterContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    grid-row: 1 / 5;
+    overflow: hidden;
+  }
+
+  #box-3 {
+    background-color: rgb(167, 230, 167);
+    object-fit: none;
+    max-height: none;
+    grid-row: 3 / 5;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40%;
+    width: 2500px;
+    height: 2500px;
+    margin: 0 auto;
+    border-radius: 40%;
+
+    animation: box3Rotation 20s ease-in-out 3s forwards;
   }
 
   /* Small screen Nav and drop menu */
@@ -346,15 +337,6 @@ main {
   }
   100% {
     transform: translate(var(--x-axis-move-slidebox2));
-    visibility: hidden;
-  }
-}
-
-@keyframes smallSlideBox3 {
-  0% {
-  }
-  100% {
-    transform: translate(var(--x-axis-move-slidebox3));
     visibility: hidden;
   }
 }
@@ -432,10 +414,7 @@ main {
   /* distance to move boxes hiding h1 relative to h1 width */
   --x-axis-move-slidebox1: undefined;
   --x-axis-move-slidebox2: undefined;
-  --x-axis-move-slidebox3: undefined;
   --anim-duration-slidebox1: undefined;
   --anim-duration-slidebox2: undefined;
-  --anim-duration-slidebox3: undefined;
   --anim-delay-slidebox2: undefined;
-  --anim-delay-slidebox3: undefined;
 }
