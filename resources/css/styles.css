@@ -15,6 +15,10 @@ main {
   height: 100vh;
 }
 
+.intro-animation {
+  height: 100vh;
+}
+
 .banana {
   position: absolute;
   width: 0;
@@ -47,7 +51,6 @@ main {
   margin: 0;
   border: 8px rgb(190, 123, 168);
   border-style: none none solid none;
-  animation: navSlide 3s ease forwards;
 }
 
 .navbar ul {
@@ -194,11 +197,11 @@ main {
   }
 
   @keyframes box3Rotation {
-    from {
-      top: 0;
+    0% {
+      top: -10%;
       transform: translateX(-50%) rotate(0);
     }
-    to {
+    100% {
       top: 90%;
       transform: translateX(-50%) rotate(360deg);
     }
@@ -212,21 +215,21 @@ main {
     overflow: hidden;
   }
 
-  #box-3 {
+  #water {
     position: absolute;
-    background-color: rgb(167, 230, 167);
+    background-color: rgb(80, 163, 189);
     object-fit: none;
     max-height: none;
     grid-row: 3 / 5;
     left: 50%;
     transform: translateX(-50%);
-    top: -40%;
-    width: 4000px;
-    height: 4000px;
+    top: -10%;
+    width: 120vh;
+    height: 120vh;
     margin: 0 auto;
+    border: 20px solid rgb(57, 116, 134);
     border-radius: 42%;
-
-    animation: box3Rotation 20s ease-in-out forwards;
+    animation: box3Rotation 8s ease-in-out 3s forwards;
   }
 
   /* Small screen Nav and drop menu */
@@ -235,8 +238,7 @@ main {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     height: 90px;
-    animation-duration: 700ms;
-    animation-delay: 3500ms;
+    animation: navSlide 700ms ease 3500ms forwards;
   }
 
   .menu-icon {
