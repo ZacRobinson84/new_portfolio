@@ -7,8 +7,14 @@ document.getElementById("portfolioButton").addEventListener("click", () => {
 });
 
 document.getElementById("menuIcon").addEventListener("click", () => {
-  addClass("dropMenu", "drop-menu");
+  addClass("dropMenuBackground", "drop-menu-background");
 });
+
+document
+  .getElementById("dropMenuBackground")
+  .addEventListener("animationend", () => {
+    addClass("dropMenu", "drop-menu");
+  });
 
 //Remove element eventlisteners
 document.getElementById("water1").addEventListener("animationend", () => {
@@ -74,10 +80,6 @@ function addClass(elementId, elementClass) {
   } else {
     x.className = elementClass;
   }
-}
-
-function pressButton() {
-  x = document.getElementById("");
 }
 
 function animateDivs(divId) {
