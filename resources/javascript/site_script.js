@@ -1,7 +1,21 @@
 window.onload = myInit;
 
-//Animation eventlisteners
+//Click eventlisteners
 
+document.getElementById("portfolioButton").addEventListener("click", () => {
+  addClass("portfolioButton", "portfolio-button");
+});
+
+document.getElementById("menuIcon").addEventListener("click", () => {
+  addClass("dropMenu", "drop-menu");
+});
+
+//Remove element eventlisteners
+document.getElementById("water1").addEventListener("animationend", () => {
+  removeDivs("waterContainer");
+});
+
+//Animation eventlisteners
 document.getElementById("navbar").addEventListener("animationend", () => {
   animateDivs("menuIcon");
 });
@@ -52,16 +66,24 @@ function addElement() {
   createDivs("banana", "right", -8);
 }
 
-// drop-menu functions
-function dropMenu() {
-  x = document.getElementById("dropMenu");
-  if (x.className === "drop-menu") {
+// Add new class to an element
+function addClass(elementId, elementClass) {
+  x = document.getElementById(elementId);
+  if (x.className === elementClass) {
     x.className += " active";
   } else {
-    x.className = "drop-menu";
+    x.className = elementClass;
   }
+}
+
+function pressButton() {
+  x = document.getElementById("");
 }
 
 function animateDivs(divId) {
   document.getElementById(divId).className += " animated";
+}
+
+function removeDivs(divId) {
+  document.getElementById(divId).className += " removed";
 }

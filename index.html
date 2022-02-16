@@ -14,19 +14,21 @@
   </head>
   <body>
     <div class="intro-animation" id="tester">
-      <header>
-        <title>Zac Robinson's Portfolio</title>
-        <div class="navbar" id="navbar">
-          <ul>
-            <a href="#home"><li>HOME</li></a>
-            <a href="#skills"><li>SKILLS</li></a>
-            <a href="#projects"><li>PROJECTS</li></a>
-            <a href="#contact"><li>CONTACT</li></a>
-          </ul>
-          <div class="menu-icon" id="menuIcon" onclick="dropMenu()">
-            <div class="menu-icon-bar"></div>
-            <div class="menu-icon-bar"></div>
-            <div class="menu-icon-bar"></div>
+      <div class="header-container">
+        <header>
+          <title>Zac Robinson's Portfolio</title>
+          <div class="navbar" id="navbar">
+            <ul>
+              <a href="#home"><li>HOME</li></a>
+              <a href="#skills"><li>SKILLS</li></a>
+              <a href="#projects"><li>PROJECTS</li></a>
+              <a href="#contact"><li>CONTACT</li></a>
+            </ul>
+            <div class="menu-icon" id="menuIcon">
+              <div class="menu-icon-bar"></div>
+              <div class="menu-icon-bar"></div>
+              <div class="menu-icon-bar"></div>
+            </div>
           </div>
           <div class="drop-menu" id="dropMenu">
             <ul>
@@ -36,8 +38,8 @@
               <a href="#contact"><li>CONTACT</li></a>
             </ul>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
 
       <main>
         <div class="intro-container">
@@ -48,8 +50,15 @@
           </div>
           <h1 id="hi">Hi,</h1>
           <h1 id="imzac">I'm Zac.</h1>
-          <h2>Front End Developer / Illustrator</h2>
-          <a href="#" class="portfolio-button">MY PORTFOLIO</a>
+          <h2>Front End Developer / Illustrator.</h2>
+          <a
+            href="#"
+            class="portfolio-button"
+            onclick="pressButton()"
+            id="portfolioButton"
+          >
+            Checkout my work
+          </a>
         </div>
         <div class="water-drops-container">
           <div class="water-drop"></div>
