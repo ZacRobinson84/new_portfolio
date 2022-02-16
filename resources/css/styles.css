@@ -156,7 +156,7 @@ main {
 @media screen and (max-width: 821px) {
   .intro-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 65%;
+    grid-template-rows: 1fr 1fr 1fr 4fr;
     width: 80%;
     height: 70%;
     margin: 25px auto;
@@ -192,18 +192,65 @@ main {
   #robinson {
     grid-row: 3 / 4;
   }
-  .intro-container h1 br {
-    display: inline;
+
+  .portfolio-button {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    background-color: yellow;
+    color: rgb(194, 142, 0);
+    text-align: center;
+    text-decoration: none;
+    justify-content: center;
+    align-content: center;
+    justify-self: center;
+    align-self: center;
+    width: 200px;
+    height: 80px;
+    border: 2px solid rgb(194, 142, 0);
+    border-radius: 20px;
+    box-shadow: 3px 3px;
+  }
+
+  .portfolio-button a p {
+    align-self: center;
+    padding: 0;
+    margin: 0;
   }
 
   @keyframes box3Rotation {
     0% {
-      top: -10%;
-      transform: translateX(-50%) rotate(0);
+      top: -30%;
+      transform: translateX(-50%) rotate(0) scale(1);
     }
+
     100% {
-      top: 90%;
-      transform: translateX(-50%) rotate(360deg);
+      top: 85%;
+      transform: translateX(-50%) rotate(320deg) scale(0.8);
+    }
+  }
+
+  @keyframes water2Rotation {
+    0% {
+      top: -20%;
+      transform: translateX(-50%) rotate(70deg) scale(1);
+    }
+
+    100% {
+      top: 83%;
+      transform: translateX(-50%) rotate(-250deg) scale(0.8);
+    }
+  }
+
+  @keyframes water3Rotation {
+    0% {
+      top: -10%;
+      transform: translateX(-50%) rotate(120deg) scale(1);
+    }
+
+    100% {
+      top: 80%;
+      transform: translateX(-50%) rotate(440deg) scale(0.8);
     }
   }
 
@@ -215,21 +262,41 @@ main {
     overflow: hidden;
   }
 
-  #water {
+  .water {
     position: absolute;
-    background-color: rgb(80, 163, 189);
     object-fit: none;
     max-height: none;
     grid-row: 3 / 5;
     left: 50%;
     transform: translateX(-50%);
-    top: -10%;
-    width: 120vh;
-    height: 120vh;
     margin: 0 auto;
-    border: 20px solid rgb(57, 116, 134);
+
     border-radius: 42%;
-    animation: box3Rotation 8s ease-in-out 3s forwards;
+  }
+
+  .water#water1 {
+    background-color: rgb(62, 153, 165);
+    top: -30%;
+    width: 150vh;
+    height: 150vh;
+    animation: box3Rotation 7s ease-in 3s forwards;
+  }
+
+  .water#water2 {
+    background-color: rgb(72, 174, 187);
+    width: 160vh;
+    height: 160vh;
+    transform: translateX(-50%) rotate(90deg);
+    animation: water2Rotation 6.5s ease-in 3s forwards;
+  }
+
+  .water#water3 {
+    background-color: rgb(80, 191, 206);
+    top: -10%;
+    width: 175vh;
+    height: 175vh;
+    transform: translateX(-50%) rotate(130deg);
+    animation: water3Rotation 6.2s ease-in 3s forwards;
   }
 
   /* Small screen Nav and drop menu */
