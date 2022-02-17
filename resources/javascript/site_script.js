@@ -12,7 +12,7 @@ document.getElementById("menuIcon").addEventListener("click", () => {
 
 document
   .getElementById("dropMenuBackground")
-  .addEventListener("animationend", () => {
+  .addEventListener("animationstart", () => {
     addClass("dropMenu", "drop-menu");
   });
 
@@ -76,9 +76,11 @@ function addElement() {
 function addClass(elementId, elementClass) {
   x = document.getElementById(elementId);
   if (x.className === elementClass) {
-    x.className += " active";
+    x.className = elementClass + " active";
+  } else if (x.className === elementClass + " active") {
+    x.className += " revert";
   } else {
-    x.className = elementClass;
+    x.className = elementClass + " active";
   }
 }
 
