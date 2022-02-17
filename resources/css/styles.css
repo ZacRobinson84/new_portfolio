@@ -344,26 +344,8 @@ main {
     margin: 10px;
   }
 
-  @keyframes dropMenuActive {
-    0% {
-      top: -160vh;
-      transform: translateX(-50%) rotate(0);
-    }
-
-    100% {
-      top: -50vw;
-      transform: translateX(-50%) rotate(180deg);
-    }
-  }
-
   .drop-menu-background {
-    display: none;
-  }
-
-  .drop-menu-background.active {
-    display: block;
     position: absolute;
-    top: -160vh;
     width: 150vh;
     height: 150vh;
     background-color: white;
@@ -371,27 +353,26 @@ main {
     border: 50px solid black;
     border-radius: 40%;
     left: 50%;
-    transform: translateX(-50%) rotate(0);
+    transition-property: top, transform;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    top: -160vh;
+    transform: translate(-50%) rotate(0);
     z-index: -1;
-    animation: dropMenuActive 2s linear forwards;
+    visibility: hidden;
   }
 
-  @keyframes dropMenuRevert {
-    0% {
-      top: -50vh;
-      transform: translateX(-50%) rotate(180deg);
-      visibility: visible;
-    }
-    100% {
-      top: -160vh;
-      transform: translateX(-50%) rotate(0);
-    }
+  .drop-menu-background.active {
+    top: -50vh;
+    transform: translateX(-50%) rotate(180deg);
+    visibility: visible;
   }
 
   .drop-menu-background.active.revert {
     display: block;
     visibility: visible;
-    animation: dropMenuRevert 2s linear forwards;
+    top: -160vh;
+    transform: translateX(-50%) rotate(0);
   }
 
   @keyframes dropItemsActive {
@@ -403,7 +384,7 @@ main {
     }
   }
 
-  .drop-menu.active {
+  .drop-menu {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -412,9 +393,20 @@ main {
     animation: dropItemsActive 1000ms ease-out 300ms forwards;
     width: 100%;
     z-index: 1;
+    transition-property: top;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    transition-delay: 300ms;
+    visibility: hidden;
   }
 
-  .drop-menu.active ul {
+  .drop-menu.active {
+    top: 300px;
+    visibility: visible;
+  }
+
+  .drop-menu ul {
+    visibility: hidden;
     display: grid;
     font-size: 7vw;
     grid-template-columns: 1fr;
@@ -423,6 +415,10 @@ main {
     padding: 0;
     margin: auto;
     width: 100%;
+  }
+
+  .drop-menu.active ul {
+    visibility: visible;
   }
 
   @keyframes dropItemsRevert {
@@ -435,8 +431,7 @@ main {
   }
 
   .drop-menu.active.revert {
-    animation: dropItemsRevert 1000ms ease-out forwards;
-    top: 300px;
+    top: -70%;
   }
 
   .drop-menu.active ul a {

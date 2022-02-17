@@ -8,13 +8,8 @@ document.getElementById("portfolioButton").addEventListener("click", () => {
 
 document.getElementById("menuIcon").addEventListener("click", () => {
   addClass("dropMenuBackground", "drop-menu-background");
+  addClass("dropMenu", "drop-menu");
 });
-
-document
-  .getElementById("dropMenuBackground")
-  .addEventListener("animationstart", () => {
-    addClass("dropMenu", "drop-menu");
-  });
 
 //Remove element eventlisteners
 document.getElementById("water1").addEventListener("animationend", () => {
