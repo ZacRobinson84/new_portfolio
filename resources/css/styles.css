@@ -218,10 +218,6 @@ main {
     transform: translate(0, 5px);
   }
 
-  .portfolio-button:hover {
-    border: 2px dashed rgb(194, 142, 0);
-  }
-
   .portfolio-button a {
     align-self: center;
     padding: 0;
@@ -236,7 +232,7 @@ main {
 
     100% {
       top: 87%;
-      transform: translateX(-50%) rotate(320deg) scale(0.8);
+      transform: translateX(-50%) rotate(230deg) scale(0.8);
       visibility: hidden;
     }
   }
@@ -249,7 +245,7 @@ main {
 
     100% {
       top: 83%;
-      transform: translateX(-50%) rotate(-250deg) scale(0.8);
+      transform: translateX(-50%) rotate(-160deg) scale(0.8);
       visibility: hidden;
     }
   }
@@ -262,7 +258,7 @@ main {
 
     100% {
       top: 80%;
-      transform: translateX(-50%) rotate(440deg) scale(0.8);
+      transform: translateX(-50%) rotate(350deg) scale(0.8);
       visibility: hidden;
     }
   }
@@ -354,7 +350,7 @@ main {
     border-radius: 40%;
     left: 50%;
     transition-property: top, transform;
-    transition-duration: 2s;
+    transition-duration: 1500ms;
     transition-timing-function: linear;
     top: -160vh;
     transform: translate(-50%) rotate(0);
@@ -388,21 +384,21 @@ main {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: -70%;
-    opacity: 97%;
-    animation: dropItemsActive 1000ms ease-out 300ms forwards;
+    top: 300px;
+    opacity: 0;
     width: 100%;
     z-index: 1;
-    transition-property: top;
-    transition-duration: 1s;
-    transition-timing-function: ease-out;
-    transition-delay: 300ms;
+    transition-property: opacity;
+    transition-duration: 700ms;
+    transition-timing-function: ease;
+
     visibility: hidden;
   }
 
   .drop-menu.active {
-    top: 300px;
+    opacity: 97%;
     visibility: visible;
+    transition-delay: 900ms;
   }
 
   .drop-menu ul {
@@ -431,11 +427,12 @@ main {
   }
 
   .drop-menu.active.revert {
-    top: -70%;
+    opacity: 0;
+    transition-delay: 0s;
   }
 
   .drop-menu.active ul a {
-    margin: 5px;
+    margin: 15px;
     color: rgb(37, 37, 37);
     text-decoration: none;
     justify-self: center;
