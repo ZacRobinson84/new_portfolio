@@ -9,6 +9,7 @@ document.getElementById("portfolioButton").addEventListener("click", () => {
 document.getElementById("menuIcon").addEventListener("click", () => {
   addClass("dropMenuBackground", "drop-menu-background");
   addClass("dropMenu", "drop-menu");
+  addClass("menuIcon", "menu-icon");
 });
 
 //Remove element eventlisteners

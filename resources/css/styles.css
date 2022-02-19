@@ -159,7 +159,7 @@ main {
   .intro-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 4fr;
-    width: 80%;
+    width: 85%;
     height: 70%;
     margin: 25px auto;
   }
@@ -224,7 +224,7 @@ main {
     margin: 0;
   }
 
-  @keyframes box3Rotation {
+  @keyframes water1Rotation {
     0% {
       top: -30%;
       transform: translateX(-50%) rotate(0) scale(1);
@@ -291,7 +291,7 @@ main {
     top: -30%;
     width: 150vh;
     height: 150vh;
-    animation: box3Rotation 7s ease-in 3s forwards;
+    animation: water1Rotation 5s ease-in 3s forwards;
   }
 
   .water#water2 {
@@ -299,7 +299,7 @@ main {
     width: 160vh;
     height: 160vh;
     transform: translateX(-50%) rotate(90deg);
-    animation: water2Rotation 6.5s ease-in 3s forwards;
+    animation: water2Rotation 4.5s ease-in 3s forwards;
   }
 
   .water#water3 {
@@ -308,7 +308,7 @@ main {
     width: 175vh;
     height: 175vh;
     transform: translateX(-50%) rotate(130deg);
-    animation: water3Rotation 6.2s ease-in 3s forwards;
+    animation: water3Rotation 4.2s ease-in 3s forwards;
   }
 
   /* Small screen Nav and drop menu */
@@ -338,21 +338,27 @@ main {
     height: 5px;
     background-color: rgb(190, 123, 168);
     margin: 10px;
+    transition: transform 1s;
+  }
+
+  .menu-icon.active #menuIconBar1 {
+    transform: rotate(45deg);
   }
 
   .drop-menu-background {
     position: absolute;
     width: 150vh;
     height: 150vh;
+    top: -160vh;
+    left: 50%;
     background-color: white;
     opacity: 97%;
     border: 50px solid black;
     border-radius: 40%;
-    left: 50%;
+    box-shadow: 75px 75px rgba(0, 0, 0, 0.2);
     transition-property: top, transform;
     transition-duration: 1500ms;
     transition-timing-function: linear;
-    top: -160vh;
     transform: translate(-50%) rotate(0);
     z-index: -1;
     visibility: hidden;
@@ -384,14 +390,13 @@ main {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 300px;
+    top: 250px;
     opacity: 0;
     width: 100%;
     z-index: 1;
     transition-property: opacity;
     transition-duration: 700ms;
     transition-timing-function: ease;
-
     visibility: hidden;
   }
 
