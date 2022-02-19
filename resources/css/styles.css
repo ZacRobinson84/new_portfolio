@@ -438,7 +438,7 @@ main {
   .drop-menu.active {
     opacity: 97%;
     visibility: visible;
-    transition-delay: 900ms;
+    transition-delay: 1s;
   }
 
   .drop-menu ul {
@@ -477,10 +477,22 @@ main {
 
   .drop-menu ul a {
     margin: 15px;
+    padding: 15px;
     color: rgb(37, 37, 37);
     text-decoration: none;
     justify-self: center;
     align-self: center;
+    background-color: white;
+    border-radius: 20px;
+    transition: all 1200ms 800ms;
+  }
+
+  .drop-menu.active ul a {
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .drop-menu.revert ul a {
+    transition-delay: 0s;
   }
 }
 /* Keyframes */
