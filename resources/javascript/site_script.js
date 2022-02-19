@@ -71,12 +71,14 @@ function addElement() {
 // Add new class to an element
 function addClass(elementId, elementClass) {
   x = document.getElementById(elementId);
-  if (x.className === elementClass) {
-    x.className = elementClass + " active";
-  } else if (x.className === elementClass + " active") {
-    x.className += " revert";
-  } else {
-    x.className = elementClass + " active";
+  if (!x.classList.contains("active") && !x.classList.contains("revert")) {
+    x.classList.add("active");
+  } else if (x.classList.contains("active")) {
+    x.classList.add("revert");
+    x.classList.remove("active");
+  } else if (x.classList.contains("revert")) {
+    x.classList.add("active");
+    x.classList.remove("revert");
   }
 }
 

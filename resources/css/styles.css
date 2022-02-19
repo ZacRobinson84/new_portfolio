@@ -321,7 +321,11 @@ main {
   }
 
   .menu-icon {
-    display: block;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    width: 55px;
+    height: 55px;
     margin: auto;
     opacity: 0;
     border: 5px solid white;
@@ -334,15 +338,46 @@ main {
   }
 
   .menu-icon-bar {
-    width: 40px;
+    position: absolute;
+    width: 41px;
     height: 5px;
+    margin: 0;
     background-color: rgb(190, 123, 168);
-    margin: 10px;
-    transition: transform 1s;
+    border-radius: 2px;
+    transition: all 600ms;
+  }
+
+  .menu-icon-bar#menuIconBar1 {
+    top: 13px;
+  }
+
+  .menu-icon-bar#menuIconBar2 {
+    top: 25px;
+  }
+
+  .menu-icon-bar#menuIconBar3 {
+    top: 25px;
+  }
+
+  .menu-icon-bar#menuIconBar4 {
+    top: 37px;
   }
 
   .menu-icon.active #menuIconBar1 {
+    opacity: 0;
+    top: 25px;
+  }
+
+  .menu-icon.active #menuIconBar2 {
+    transform: rotate(-45deg);
+  }
+
+  .menu-icon.active #menuIconBar3 {
     transform: rotate(45deg);
+  }
+  .menu-icon.active #menuIconBar4 {
+    opacity: 0;
+    top: 25px;
   }
 
   .drop-menu-background {
@@ -370,7 +405,7 @@ main {
     visibility: visible;
   }
 
-  .drop-menu-background.active.revert {
+  .drop-menu-background.revert {
     display: block;
     visibility: visible;
     top: -160vh;
@@ -422,6 +457,10 @@ main {
     visibility: visible;
   }
 
+  .drop-menu.revert ul {
+    visibility: visible;
+  }
+
   @keyframes dropItemsRevert {
     0% {
       top: 300px;
@@ -431,12 +470,12 @@ main {
     }
   }
 
-  .drop-menu.active.revert {
+  .drop-menu.revert {
     opacity: 0;
     transition-delay: 0s;
   }
 
-  .drop-menu.active ul a {
+  .drop-menu ul a {
     margin: 15px;
     color: rgb(37, 37, 37);
     text-decoration: none;
