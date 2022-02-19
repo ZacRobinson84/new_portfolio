@@ -10,6 +10,7 @@ document.getElementById("menuIcon").addEventListener("click", () => {
   addClass("dropMenuBackground", "drop-menu-background");
   addClass("dropMenu", "drop-menu");
   addClass("menuIcon", "menu-icon");
+  createDivs("drop-menu-stripes", "dropMenuStripes", 4, 8, "dropMenu");
 });
 
 //Remove element eventlisteners
@@ -41,8 +42,8 @@ function getRandRGB() {
 }
 
 // generate a series of styled divs for background intro animation
-function createDivs(divClass, divID, rotateRoll) {
-  for (let i = 0; i < 10; i++) {
+function createDivs(divClass, divID, divAmount, rotateRoll, targetId) {
+  for (let i = 0; i < divAmount; i++) {
     setTimeout(() => {
       let randNumY = getRandNum(0, 1100);
       let randDelay = getRandNum(0, 1000);
@@ -57,15 +58,15 @@ function createDivs(divClass, divID, rotateRoll) {
       newDiv.style.animationDuration = randDuration.toString().concat("ms");
       newDiv.style.animationDelay = randDelay.toString().concat("ms");
       newDiv.style.transform = "rotate(" + randRotate + "deg)";
-      document.getElementById("tester").appendChild(newDiv);
+      document.getElementById(targetId).appendChild(newDiv);
     }, getRandNum(0, 3000));
   }
 }
 
 // divide the background intro divs into left and right starting positions
 function addElement() {
-  createDivs("banana", "left", 8);
-  createDivs("banana", "right", -8);
+  createDivs("banana", "left", 10, 8, "tester");
+  createDivs("banana", "right", 10, -8, "tester");
 }
 
 // Add new class to an element
