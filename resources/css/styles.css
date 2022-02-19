@@ -347,19 +347,19 @@ main {
     transition: all 600ms;
   }
 
-  .menu-icon-bar#menuIconBar1 {
+  #menuIconBar1 {
     top: 13px;
   }
 
-  .menu-icon-bar#menuIconBar2 {
+  #menuIconBar2 {
     top: 25px;
   }
 
-  .menu-icon-bar#menuIconBar3 {
+  #menuIconBar3 {
     top: 25px;
   }
 
-  .menu-icon-bar#menuIconBar4 {
+  #menuIconBar4 {
     top: 37px;
   }
 
