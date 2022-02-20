@@ -354,16 +354,42 @@ main {
     height: 150vh;
     top: -160vh;
     left: 50%;
-    background: white;
-    opacity: 50%;
-    border: 50px solid white;
+    background-color: var(--random-rgb1);
+    opacity: 70%;
     border-radius: 40%;
     box-shadow: 75px 75px rgba(0, 0, 0, 0.2);
-    transition-property: top, transform;
+    transition-property: top, transform, background-color;
     transition-duration: 1500ms;
     transition-timing-function: linear;
-    transform: translate(-50%) rotate(0);
+    transform: translateX(-50%) rotate(0);
     z-index: -1;
+    visibility: hidden;
+  }
+
+  .drop-menu-background.extra {
+    box-shadow: none;
+    border: none;
+  }
+
+  #dropMenuBackground2 {
+    transition-duration: 1700ms;
+    background-color: var(--random-rgb2);
+  }
+
+  .active#dropMenuBackground2 {
+    transform: translateX(-50%) rotate(-180deg);
+  }
+
+  #dropMenuBackground3 {
+    transition-duration: 2000ms;
+    background-color: var(--random-rgb3);
+  }
+
+  #dropMenuBackground4 {
+    visibility: hidden;
+  }
+
+  #dropMenuBackground5 {
     visibility: hidden;
   }
 
@@ -522,4 +548,10 @@ main {
     transform: translateX(-50%) rotate(350deg) scale(0.8);
     visibility: hidden;
   }
+}
+
+:root {
+  --random-rgb1: none;
+  --random-rgb2: none;
+  --random-rgb3: none;
 }

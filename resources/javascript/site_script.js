@@ -7,9 +7,19 @@ document.getElementById("portfolioButton").addEventListener("click", () => {
 });
 
 document.getElementById("menuIcon").addEventListener("click", () => {
-  addClass("dropMenuBackground", "drop-menu-background");
-  addClass("dropMenu", "drop-menu");
-  addClass("menuIcon", "menu-icon");
+  //Set elements to active or revert
+  addClass("dropMenuBackground");
+  addClass("dropMenuBackground2");
+  addClass("dropMenuBackground3");
+  addClass("dropMenuBackground4");
+  addClass("dropMenuBackground5");
+  addClass("dropMenu");
+  addClass("menuIcon");
+  //get a random color for each dropMenuBackground element
+  let root = document.documentElement;
+  root.style.setProperty("--random-rgb1", getRandRGB());
+  root.style.setProperty("--random-rgb2", getRandRGB());
+  root.style.setProperty("--random-rgb3", getRandRGB());
 });
 
 //Remove element eventlisteners
@@ -106,7 +116,7 @@ function addElement() {
 }
 
 // Add new class to an element
-function addClass(elementId, elementClass) {
+function addClass(elementId) {
   x = document.getElementById(elementId);
   if (!x.classList.contains("active") && !x.classList.contains("revert")) {
     x.classList.add("active");
