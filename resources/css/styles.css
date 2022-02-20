@@ -211,11 +211,18 @@ main {
     height: 80px;
     border-radius: 7px;
     box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+    transition: all 2s;
+  }
+
+  .portfolio-button:active {
+    box-shadow: none;
+    transform: translate(0, 5px);
   }
 
   .portfolio-button.active {
-    box-shadow: none;
-    transform: translate(0, 5px);
+    transform: scale(30);
+    color: rgb(131, 228, 131);
+    background-color: rgb(131, 228, 131);
   }
 
   .portfolio-button a {
@@ -407,10 +414,10 @@ main {
     padding: 30px;
     margin: auto;
     font-size: 7vw;
-    background-color: black;
+    background-color: white;
     border-radius: 10px;
     list-style-type: none;
-    border: 8px solid white;
+    border: 8px solid black;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
     opacity: 95%;
   }
@@ -422,7 +429,7 @@ main {
     text-decoration: none;
     justify-self: center;
     align-self: center;
-    color: white;
+    color: black;
   }
 }
 /* Keyframes */
