@@ -377,64 +377,54 @@ main {
     display: grid;
     justify-content: center;
     position: absolute;
-    top: 150px;
+    top: -500px;
     opacity: 0;
     width: 100%;
     z-index: 1;
-    transition-property: opacity;
+    transition-property: all;
     transition-duration: 700ms;
     transition-timing-function: ease;
-    visibility: hidden;
   }
 
   .drop-menu.active {
-    opacity: 97%;
     visibility: visible;
-    transition-delay: 1s;
+    opacity: 97%;
+    transition-delay: 600ms;
+
+    top: 150px;
   }
 
   .drop-menu.revert {
-    opacity: 97%;
-    visibility: visible;
+    visibility: hidden;
+    opacity: 0;
+    transition-delay: 400ms;
   }
 
   .drop-menu ul {
-    display: none;
-    visibility: hidden;
-    font-size: 7vw;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    list-style-type: none;
-    padding: 0;
+    padding: 30px;
     margin: auto;
-    width: 100%;
-  }
-
-  .drop-menu.active ul {
-    visibility: visible;
-  }
-
-  .drop-menu.revert ul {
-    visibility: hidden;
+    font-size: 7vw;
+    background-color: black;
+    border-radius: 10px;
+    list-style-type: none;
+    border: 8px solid white;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    opacity: 95%;
   }
 
   .drop-menu ul a {
-    margin: 15px;
-    padding: 15px;
-    color: rgb(41, 41, 41);
+    width: 100%;
+    padding: 25px;
+    text-align: center;
     text-decoration: none;
     justify-self: center;
     align-self: center;
-    background-color: white;
-    border-radius: 20px;
-    transition: all 10s 800ms;
-  }
-
-  .drop-menu.revert ul a {
-    transition-delay: 0s;
+    color: white;
   }
 }
-
 /* Keyframes */
 
 /* Intro Background stripes */
