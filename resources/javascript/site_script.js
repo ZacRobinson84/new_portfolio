@@ -10,14 +10,6 @@ document.getElementById("menuIcon").addEventListener("click", () => {
   addClass("dropMenuBackground", "drop-menu-background");
   addClass("dropMenu", "drop-menu");
   addClass("menuIcon", "menu-icon");
-  if (document.getElementById("menuIcon").classList.contains("revert")) {
-    setTimeout(() => {
-      let stripes = document.getElementById("stripesContainer");
-      while (stripes.firstChild) {
-        stripes.removeChild(stripes.lastChild);
-      }
-    }, 1000);
-  }
 });
 
 //Remove element eventlisteners
@@ -29,26 +21,6 @@ document.getElementById("water1").addEventListener("animationend", () => {
 document.getElementById("navbar").addEventListener("animationend", () => {
   animateDivs("menuIcon");
 });
-
-document
-  .getElementById("dropMenuBackground")
-  .addEventListener("transitionend", () => {
-    if (!document.getElementById("menuIcon").classList.contains("revert")) {
-      createDivs(
-        "drop-menu-stripes",
-        "dropMenuStripes",
-        10,
-        8,
-        "stripesContainer",
-        1000,
-        2000,
-        300,
-        700,
-        getRandRGB,
-        500
-      );
-    }
-  });
 
 function myInit() {
   addElement();

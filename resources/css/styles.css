@@ -341,32 +341,15 @@ main {
     top: 25px;
   }
 
-  .drop-menu-stripes {
-    display: none;
-    position: fixed;
-    width: 0px;
-    height: 200px;
-    left: -50px;
-    opacity: 30%;
-    border-radius: 20px;
-    animation: paintBackground ease-in-out forwards;
-    transition: all 500ms;
-    z-index: 1;
-  }
-
-  .drop-menu.revert .stripes-container .drop-menu-stripes {
-    opacity: 0;
-  }
-
   .drop-menu-background {
     position: absolute;
     width: 150vh;
     height: 150vh;
     top: -160vh;
     left: 50%;
-    background-color: white;
-    opacity: 97%;
-    border: 50px solid black;
+    background: white;
+    opacity: 50%;
+    border: 50px solid white;
     border-radius: 40%;
     box-shadow: 75px 75px rgba(0, 0, 0, 0.2);
     transition-property: top, transform;
