@@ -342,15 +342,20 @@ main {
   }
 
   .drop-menu-stripes {
-    position: absolute;
-    width: 0;
-    height: 500px;
-    /*border: 12px solid rgb(0, 0, 0);
-    border-style: solid none solid none;*/
+    display: none;
+    position: fixed;
+    width: 0px;
+    height: 200px;
+    left: -50px;
     opacity: 30%;
     border-radius: 20px;
-    animation: paintBackground ease-in-out 2s forwards;
+    animation: paintBackground ease-in-out forwards;
+    transition: all 500ms;
     z-index: 1;
+  }
+
+  .drop-menu.revert .stripes-container .drop-menu-stripes {
+    opacity: 0;
   }
 
   .drop-menu-background {
@@ -386,7 +391,7 @@ main {
   }
 
   .drop-menu {
-    display: flex;
+    display: grid;
     justify-content: center;
     position: absolute;
     top: 150px;
@@ -406,13 +411,13 @@ main {
   }
 
   .drop-menu.revert {
-    opacity: 0;
-    transition-delay: 0s;
+    opacity: 97%;
+    visibility: visible;
   }
 
   .drop-menu ul {
+    display: none;
     visibility: hidden;
-    display: grid;
     font-size: 7vw;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -442,9 +447,6 @@ main {
     transition: all 10s 800ms;
   }
 
-  .drop-menu.active ul a {
-  }
-
   .drop-menu.revert ul a {
     transition-delay: 0s;
   }
@@ -460,6 +462,15 @@ main {
   }
   100% {
     width: 3000px;
+  }
+}
+
+@keyframes paintBackgroundReverse {
+  0% {
+    width: 3000px;
+  }
+  100% {
+    width: 0;
   }
 }
 
