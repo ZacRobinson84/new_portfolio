@@ -419,7 +419,6 @@ main {
     transition-property: all;
     transition-duration: 1000ms;
     transition-timing-function: ease-in-out;
-    filter: blur(100px);
   }
 
   .drop-menu.active {
@@ -427,7 +426,6 @@ main {
     opacity: 97%;
     transition-delay: 650ms;
     top: 150px;
-    filter: blur(0);
   }
 
   .drop-menu.revert {
