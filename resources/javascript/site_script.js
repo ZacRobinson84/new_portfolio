@@ -20,6 +20,8 @@ document.getElementById("menuIcon").addEventListener("click", () => {
   root.style.setProperty("--random-rgb1", getRandRGB());
   root.style.setProperty("--random-rgb2", getRandRGB());
   root.style.setProperty("--random-rgb3", getRandRGB());
+  root.style.setProperty("--random-rgb4", getRandRGB());
+  root.style.setProperty("--random-rgb5", getRandRGB());
 });
 
 //Remove element eventlisteners
