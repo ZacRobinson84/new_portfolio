@@ -365,11 +365,8 @@ main {
     visibility: hidden;
   }
 
-  .drop-menu-background.extra {
-  }
-
   #dropMenuBackground2 {
-    transition-duration: 1700ms;
+    transition-duration: 1900ms;
     background-color: var(--random-rgb2);
   }
 
@@ -377,26 +374,23 @@ main {
     transform: translateX(-50%) rotate(-180deg);
   }
 
+  .revert#dropMenuBackground2 {
+    background-color: var(--random-rgb1);
+  }
+
   #dropMenuBackground3 {
-    transition-duration: 2000ms;
+    transition-duration: 2500ms;
     background-color: var(--random-rgb3);
   }
 
-  #dropMenuBackground4 {
-    transition-duration: 2500ms;
-    background-color: var(--random-rgb4);
-  }
-  .active#dropMenuBackground4 {
-    transform: translateX(-50%) rotate(-180deg);
-  }
-
-  #dropMenuBackground5 {
-    transition-duration: 3000ms;
-    background-color: var(--random-rgb5);
+  .revert#dropMenuBackground3 {
+    background-color: var(--random-rgb2);
+    transition-duration: 1500ms;
   }
 
   .drop-menu-background.active {
-    top: -50vh;
+    position: fixed;
+    top: 0;
     transform: translateX(-50%) rotate(180deg);
     visibility: visible;
   }
@@ -406,6 +400,8 @@ main {
     visibility: visible;
     top: -160vh;
     transform: translateX(-50%) rotate(0);
+    transition-duration: 2500ms;
+    background-color: var(--random-rgb3);
   }
 
   .drop-menu {
@@ -415,15 +411,16 @@ main {
     top: 150px;
     opacity: 0;
     width: 100%;
+
     z-index: 1;
     transition-property: all;
-    transition-duration: 1000ms;
+    transition-duration: 1500ms;
     transition-timing-function: ease-in-out;
   }
 
   .drop-menu.active {
     visibility: visible;
-    opacity: 97%;
+    opacity: 100%;
     transition-delay: 650ms;
     top: 150px;
   }
@@ -440,12 +437,13 @@ main {
     padding: 30px;
     margin: auto;
     font-size: 7vw;
-    background-color: white;
     border-radius: 10px;
     list-style-type: none;
-    border: 8px solid black;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-    opacity: 95%;
+    opacity: 100%;
+    border: 2px rgba(255, 255, 255, 0.2);
+    border-style: solid none none solid;
+    transition: background-color 1s ease-in-out;
   }
 
   .drop-menu ul a {

@@ -11,8 +11,7 @@ document.getElementById("menuIcon").addEventListener("click", () => {
   addClass("dropMenuBackground");
   addClass("dropMenuBackground2");
   addClass("dropMenuBackground3");
-  addClass("dropMenuBackground4");
-  addClass("dropMenuBackground5");
+
   addClass("dropMenu");
   addClass("menuIcon");
   //get a random color for each dropMenuBackground element
@@ -20,8 +19,6 @@ document.getElementById("menuIcon").addEventListener("click", () => {
   root.style.setProperty("--random-rgb1", getRandRGB());
   root.style.setProperty("--random-rgb2", getRandRGB());
   root.style.setProperty("--random-rgb3", getRandRGB());
-  root.style.setProperty("--random-rgb4", getRandRGB());
-  root.style.setProperty("--random-rgb5", getRandRGB());
 });
 
 //Remove element eventlisteners
