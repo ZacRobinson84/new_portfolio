@@ -417,17 +417,20 @@ main {
   }
 
   .drop-menu {
+    display: block;
     position: absolute;
     margin: 0;
     padding: 0;
     width: 100%;
+    visibility: hidden;
   }
 
   .drop-menu.active {
-    display: block;
+    visibility: visible;
   }
 
   .drop-menu.revert {
+    visibility: hidden;
   }
 
   .drop-menu ul {
@@ -443,6 +446,48 @@ main {
     color: white;
     text-decoration: none;
     margin: 40px 0;
+    opacity: 0;
+    transition: all 1500ms;
+  }
+
+  .drop-menu.revert ul a {
+    transition-duration: 500ms;
+  }
+
+  .drop-menu.active #dropHome {
+    opacity: 100%;
+    transition-delay: 350ms;
+  }
+
+  .drop-menu.active #dropSkills {
+    opacity: 100%;
+    transition-delay: 700ms;
+  }
+
+  .drop-menu.active #dropProjects {
+    opacity: 100%;
+    transition-delay: 1050ms;
+  }
+
+  .drop-menu.active #dropContact {
+    opacity: 100%;
+    transition-delay: 1400ms;
+  }
+
+  .drop-menu.revert #dropHome {
+    transition-delay: 900ms;
+  }
+
+  .drop-menu.revert #dropSkills {
+    transition-delay: 600ms;
+  }
+
+  .drop-menu.revert #dropProjects {
+    transition-delay: 300ms;
+  }
+
+  .drop-menu.revert #dropContact {
+    transition-delay: 0;
   }
 }
 /* Keyframes */
