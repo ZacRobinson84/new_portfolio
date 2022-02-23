@@ -14,6 +14,7 @@ document.getElementById("menuIcon").addEventListener("click", () => {
 
   addClass("dropMenu");
   addClass("menuIcon");
+  addClass("navbar");
   //get a random color for each dropMenuBackground element
   let root = document.documentElement;
   root.style.setProperty("--random-rgb1", getRandRGB());

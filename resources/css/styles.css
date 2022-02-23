@@ -286,6 +286,13 @@ main {
     grid-template-rows: 1fr;
     height: 90px;
     animation: navSlide 700ms ease 3500ms forwards;
+    transition-property: background-color, border-color;
+    transition-duration: 2500ms;
+  }
+
+  .navbar.active {
+    background-color: var(--random-rgb3);
+    border-color: white;
   }
 
   .menu-icon {
@@ -312,7 +319,11 @@ main {
     margin: 0;
     background-color: rgb(190, 123, 168);
     border-radius: 2px;
-    transition: all 600ms;
+    transition: transform 600ms, opacity 600ms, background-color 2500ms;
+  }
+
+  .navbar.active .menu-icon-bar {
+    background-color: white;
   }
 
   #menuIconBar1 {
@@ -356,6 +367,7 @@ main {
     left: 50%;
     background-color: var(--random-rgb1);
     opacity: 70%;
+    border: 5px solid white;
     border-radius: 40%;
     transition-property: top, transform, background-color;
     transition-duration: 1500ms;
@@ -405,55 +417,32 @@ main {
   }
 
   .drop-menu {
-    display: grid;
-    justify-content: center;
     position: absolute;
-    top: 150px;
-    opacity: 0;
+    margin: 0;
+    padding: 0;
     width: 100%;
-
-    z-index: 1;
-    transition-property: all;
-    transition-duration: 1500ms;
-    transition-timing-function: ease-in-out;
   }
 
   .drop-menu.active {
-    visibility: visible;
-    opacity: 100%;
-    transition-delay: 650ms;
-    top: 150px;
+    display: block;
   }
 
   .drop-menu.revert {
-    visibility: hidden;
-    opacity: 0;
   }
 
   .drop-menu ul {
     display: grid;
-    grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-    padding: 30px;
-    margin: auto;
-    font-size: 7vw;
-    border-radius: 10px;
     list-style-type: none;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-    opacity: 100%;
-    border: 2px rgba(255, 255, 255, 0.2);
-    border-style: solid none none solid;
-    transition: background-color 1s ease-in-out;
+    font-size: 8vw;
+    padding: 0;
+    justify-items: center;
   }
 
   .drop-menu ul a {
-    width: 100%;
-    padding: 25px;
-    text-align: center;
+    color: white;
     text-decoration: none;
-    justify-self: center;
-    align-self: center;
-    color: black;
+    margin: 40px 0;
   }
 }
 /* Keyframes */
