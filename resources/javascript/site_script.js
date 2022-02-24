@@ -9,17 +9,10 @@ document.getElementById("portfolioButton").addEventListener("click", () => {
 document.getElementById("menuIcon").addEventListener("click", () => {
   //Set elements to active or revert
   addClass("dropMenuBackground");
-  addClass("dropMenuBackground2");
-  addClass("dropMenuBackground3");
-
   addClass("dropMenu");
   addClass("menuIcon");
   addClass("navbar");
-  //get a random color for each dropMenuBackground element
-  let root = document.documentElement;
-  root.style.setProperty("--random-rgb1", getRandRGB());
-  root.style.setProperty("--random-rgb2", getRandRGB());
-  root.style.setProperty("--random-rgb3", getRandRGB());
+  randomWaveColors();
 });
 
 //Remove element eventlisteners
@@ -34,6 +27,7 @@ document.getElementById("navbar").addEventListener("animationend", () => {
 
 function myInit() {
   addElement();
+  randomWaveColors();
 }
 
 // create a random number between a certain range
@@ -47,6 +41,14 @@ function getRandRGB() {
   let a = getRandNum(0, 255).toString();
   let b = getRandNum(0, 255).toString();
   let c = getRandNum(0, 255).toString();
+  let rgbValue = `rgb(${a}, ${b}, ${c})`;
+  return rgbValue;
+}
+
+function getDarkRGB() {
+  let a = getRandNum(0, 175).toString();
+  let b = getRandNum(0, 175).toString();
+  let c = getRandNum(0, 175).toString();
   let rgbValue = `rgb(${a}, ${b}, ${c})`;
   return rgbValue;
 }
@@ -135,4 +137,11 @@ function animateDivs(divId) {
 
 function removeDivs(divId) {
   document.getElementById(divId).className += " removed";
+}
+
+function randomWaveColors() {
+  //get a random color for each dropMenuBackground element
+  let root = document.documentElement;
+  root.style.setProperty("--random-rgb1", getDarkRGB());
+  root.style.setProperty("--random-rgb2", getDarkRGB());
 }

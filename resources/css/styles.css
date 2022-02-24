@@ -6,16 +6,13 @@ body {
 }
 
 header {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  width: 100%;
   z-index: 1;
+  top: 0;
 }
 
 main {
-  height: 100vh;
-}
-
-.intro-animation {
   height: 100vh;
 }
 
@@ -97,7 +94,8 @@ main {
   position: relative;
   overflow-x: hidden;
   max-width: 100%;
-  height: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 @keyframes fadeIntro {
@@ -161,7 +159,7 @@ main {
     grid-template-rows: 1fr 1fr 1fr 4fr;
     width: 85%;
     height: 70%;
-    margin: 25px auto;
+    margin: 120px auto;
   }
 
   .intro-container h1 {
@@ -291,7 +289,7 @@ main {
   }
 
   .navbar.active {
-    background-color: var(--random-rgb3);
+    background-color: var(--random-rgb2);
     border-color: white;
   }
 
@@ -359,59 +357,40 @@ main {
     top: 25px;
   }
 
+  .drop-menu-background-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .drop-menu-background {
     position: absolute;
     width: 150vh;
     height: 150vh;
     top: -160vh;
     left: 50%;
-    background-color: red;
+    background-color: var(--random-rgb1);
     opacity: 100%;
-    border: 5px solid white;
+    border: 8px solid white;
     border-radius: 40%;
     transition-property: top, transform, background-color;
-    transition-duration: 1500ms;
+    transition-duration: 2s;
     transition-timing-function: linear;
     transform: translateX(-50%) rotate(0);
     z-index: -1;
-    visibility: hidden;
-  }
-
-  #dropMenuBackground2 {
-    transition-duration: 1900ms;
-    background-color: green;
-  }
-
-  .active#dropMenuBackground2 {
-    transform: translateX(-50%) rotate(-180deg);
-  }
-
-  .revert#dropMenuBackground2 {
-  }
-
-  #dropMenuBackground3 {
-    transition-duration: 2500ms;
-    background-color: blue;
-  }
-
-  .revert#dropMenuBackground3 {
-    transition-duration: 1500ms;
   }
 
   .drop-menu-background.active {
-    position: fixed;
     top: 0;
     transform: translateX(-50%) rotate(180deg);
-    visibility: visible;
+    background-color: var(--random-rgb2);
   }
 
   .drop-menu-background.revert {
     display: block;
-    visibility: visible;
     top: -160vh;
     transform: translateX(-50%) rotate(0);
-    transition-duration: 2500ms;
-    background-color: var(--random-rgb3);
+    transition-duration: 2s;
   }
 
   .drop-menu {
@@ -441,7 +420,6 @@ main {
   }
 
   .drop-menu ul a {
-    display: none;
     color: white;
     text-decoration: none;
     margin: 40px 0;
@@ -584,7 +562,4 @@ main {
 :root {
   --random-rgb1: none;
   --random-rgb2: none;
-  --random-rgb3: none;
-  --random-rgb4: none;
-  --random-rgb5: none;
 }
