@@ -365,7 +365,7 @@ main {
     height: 150vh;
     top: -160vh;
     left: 50%;
-    background-color: var(--random-rgb1);
+    background-color: red;
     opacity: 100%;
     border: 5px solid white;
     border-radius: 40%;
@@ -379,7 +379,7 @@ main {
 
   #dropMenuBackground2 {
     transition-duration: 1900ms;
-    background-color: var(--random-rgb2);
+    background-color: green;
   }
 
   .active#dropMenuBackground2 {
@@ -387,16 +387,14 @@ main {
   }
 
   .revert#dropMenuBackground2 {
-    background-color: var(--random-rgb1);
   }
 
   #dropMenuBackground3 {
     transition-duration: 2500ms;
-    background-color: var(--random-rgb3);
+    background-color: blue;
   }
 
   .revert#dropMenuBackground3 {
-    background-color: var(--random-rgb2);
     transition-duration: 1500ms;
   }
 
