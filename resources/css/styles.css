@@ -443,6 +443,7 @@ main {
   }
 
   .drop-menu ul a {
+    display: none;
     color: white;
     text-decoration: none;
     margin: 40px 0;
