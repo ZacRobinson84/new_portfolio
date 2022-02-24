@@ -366,7 +366,7 @@ main {
     top: -160vh;
     left: 50%;
     background-color: var(--random-rgb1);
-    opacity: 70%;
+    opacity: 100%;
     border: 5px solid white;
     border-radius: 40%;
     transition-property: top, transform, background-color;
